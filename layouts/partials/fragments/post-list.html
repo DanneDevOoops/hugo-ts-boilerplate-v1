@@ -1,0 +1,82 @@
+{{- /*
+  HTMX Fragment: Post List
+
+  Server-rendered partial for paginated post listings.
+  HTMX swaps this into the page without full reload.
+
+  Usage: {{ partial "fragments/post-list.html" .
+}}
+*/ -}}
+{{- $paginator := .Paginate (where site.RegularPages "Type" "posts") -}}
+
+
+<div id="post-list" class="space-y-4">
+  {{- range $paginator.Pages -}}
+    <article class="border rounded-lg p-4 hover:shadow-lg transition-shadow">
+      <h2 class="text-xl font-bold">
+        <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+      </h2>
+      {{- with .Params.description -}}
+        <p class="text-gray-600 mt-2">{{ . }}</p>
+      {{- end -}}
+      <div class="text-sm text-gray-500 mt-2">
+        <time datetime="{{ .Date.Format "2006-01-02" }}">
+          {{ .Date.Format "January 2, 2006" }}
+        </time>
+        {{- with .Params.tags -}}
+          <span class="ml-2">
+            {{- range . -}}
+              <span class="inline-block bg-gray-200 rounded px-2 py-1 text-xs mr-1">{{ . }}</span>
+            {{- end -}}
+          </span>
+        {{- end -}}
+      </div>
+    </article>
+  {{- end -}}
+
+  {{- if gt $paginator.TotalPages 1 -}}
+    <nav class="flex justify-between items-center mt-6" aria-label="Pagination">
+      {{- if $paginator.HasPrev -}}
+        <button
+          hx-get="{{ $paginator.Prev.URL }}"
+          hx-target="#post-list"
+          hx-swap="outerHTML"
+          hx-indicator="#loading-indicator"
+          class="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600"
+        >
+          ← Previous
+        </button>
+      {{- else -}}
+        <span class="px-4 py-2 bg-gray-300 text-gray-500 rounded cursor-not-allowed"
+          >← Previous</span
+        >
+      {{- end -}}
+
+
+      <span class="text-sm text-gray-600">
+        Page {{ $paginator.PageNumber }} of
+        {{ $paginator.TotalPages }}
+      </span>
+
+      {{- if $paginator.HasNext -}}
+        <button
+          hx-get="{{ $paginator.Next.URL }}"
+          hx-target="#post-list"
+          hx-swap="outerHTML"
+          hx-indicator="#loading-indicator"
+          class="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600"
+        >
+          Next →
+        </button>
+      {{- else -}}
+        <span class="px-4 py-2 bg-gray-300 text-gray-500 rounded cursor-not-allowed">Next →</span>
+      {{- end -}}
+    </nav>
+  {{- end -}}
+</div>
+
+{{- /* Loading indicator */ -}}
+<div id="loading-indicator" class="htmx-indicator text-center py-4">
+  <span class="inline-block animate-spin rounded-full h-8 w-8 border-b-2 border-blue-500"></span>
+  <span class="ml-2 text-gray-600">Loading...</span>
+</div>

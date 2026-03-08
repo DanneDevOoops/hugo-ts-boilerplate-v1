@@ -1,0 +1,43 @@
+name: hugo-docker
+
+x-hugo-base-image: &hugo_base_image hugomods/hugo:exts-non-root
+
+x-hugo-service: &hugo_service
+  build:
+    context: .
+    dockerfile: Dockerfile
+    args:
+      HUGO_BASE_IMAGE: *hugo_base_image
+  working_dir: /src
+  volumes:
+    - ./:/src
+    - ~/hugo_cache:/tmp/hugo_cache
+  environment:
+    HUGO_CACHEDIR: /tmp/hugo_cache
+
+services:
+  hugo-dev:
+    <<: *hugo_service
+    command: sh -c "chmod +x ./scripts/docker-dev.sh && ./scripts/docker-dev.sh"
+    env_file:
+      - .env.dev
+    ports:
+      - 1313:1313
+
+  hugo-staging:
+    <<: *hugo_service
+    command: server --environment staging --bind 0.0.0.0
+    env_file:
+      - .env.stage
+    ports:
+      - 1314:1313
+    profiles:
+      - staging
+
+  hugo-prod:
+    <<: *hugo_service
+    command: --environment production --minify --destination /src/public
+    env_file:
+      - .env.prod
+    profiles:
+      - production

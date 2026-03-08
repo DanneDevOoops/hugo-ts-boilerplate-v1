@@ -1,0 +1,11 @@
+# Don't copy these into Docker build context (faster builds)
+node_modules/
+public/
+.git/
+.gitignore
+*.md
+docs/
+.hugo_build.lock
+resources/_gen/
+.DS_Store
+

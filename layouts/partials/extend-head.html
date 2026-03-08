@@ -1,0 +1,14 @@
+{{- /* Custom JavaScript bundle - compiled from TypeScript with Bun */ -}}
+{{- /* HTMX is bundled in main.js via: import 'htmx.org' */ -}}
+{{- $jsCustom := resources.Get "js/main.js" -}}
+{{- if $jsCustom -}}
+  {{- $alg := .Params.fingerprintAlgorithm | default "sha512" -}}
+  {{- /* Bun already minified it, skip Hugo minify to preserve customElements.define */ -}}
+  {{- $jsCustom = $jsCustom | resources.Fingerprint $alg -}}
+  <script
+    defer
+    type="module"
+    src="{{ $jsCustom.RelPermalink }}"
+    integrity="{{ $jsCustom.Data.Integrity }}"
+  ></script>
+{{- end -}}

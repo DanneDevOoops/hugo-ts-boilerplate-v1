@@ -1,0 +1,52 @@
+# OS / Editor junk files
+.DS_Store
+Thumbs.db
+.idea
+.vscode
+*.swp
+
+# Hugo-generated output
+public/
+resources/_gen/
+hugo_stats.json
+.hugo_build.lock
+
+# Created by https://www.toptal.com/developers/gitignore/api/hugo
+# Edit at https://www.toptal.com/developers/gitignore?templates=hugo
+
+### Hugo ###
+# Generated files by Hugo
+assets/jsconfig.json
+assets/js/
+
+# Hugo executables (sometimes added manually)
+hugo.exe
+hugo.darwin
+hugo.linux
+
+# Hugo module vendor directories
+_vendor/
+vendor/
+
+# Node / frontend dependencies
+node_modules/
+npm-debug.log
+package-lock.json
+
+# Build artifacts and caches
+dist/
+tmp/
+.cache/
+*.log
+
+# Environment files (excluded from Docker for security)
+.env
+.env.*
+
+# Keep example env files for developer guidance
+!.env.example
+!.env.sample
+
+# Generated documentation
+docs/typedoc/
+docs/coverage/

@@ -1,0 +1,4 @@
+{{- $name := .Get "name" | default "friend" -}}
+{{/* Custom Web Component - defined in assets/ts/components/hello-card.ts */}}
+<!--suppress HtmlUnknownTag -->
+<hello-card name="{{ $name }}"></hello-card>

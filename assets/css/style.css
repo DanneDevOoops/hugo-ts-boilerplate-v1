@@ -1,0 +1,39 @@
+// ============================================================================
+// Hugo Site - Main SCSS Entrypoint
+// ============================================================================
+// This file orchestrates all SCSS partials in the correct order.
+// Never add direct styles here - use the appropriate partial file.
+//
+// Import Order (ITCSS):
+// 1. Settings (variables, configuration)
+// 2. Tools (mixins, functions)
+// 3. Generic (resets, normalize)
+// 4. Layout (page structure)
+// 5. Components (specific UI elements)
+// 6. Utilities (single-purpose classes)
+// ============================================================================
+
+// 1. Settings: Variables, colors, spacing, typography
+@import 'variables';
+
+// 2. Tools: Mixins and functions
+@import 'mixins';
+
+// 3. Generic: Base styles, resets, global typography
+@import 'base';
+
+// 4. Layout: Container, grid, flexbox, main layout
+@import 'layout';
+
+// 5. Components: Buttons, cards, badges, alerts, navigation, etc.
+@import 'components';
+
+// 6. Utilities: Single-purpose utility classes
+// Note: Commented out due to file creation timeout
+// @import 'utilities';
+
+// ============================================================================
+// Project-Specific Styles
+// ============================================================================
+// Add any additional project-specific styles below this line
+// Consider creating more component files as the project grows

@@ -1,0 +1,18 @@
+# Development Environment Configuration
+# This file overrides settings in config/_default/ for development
+
+# Enable drafts and future content in development
+buildDrafts = true
+buildFuture = true
+
+# Development base URL
+baseURL = "http://localhost:1313"
+
+# Disable minification in development for easier debugging
+[minify]
+  disableHTML = true
+  disableCSS = true
+  disableJS = true
+  disableJSON = true
+  disableXML = true
+

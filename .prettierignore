@@ -1,0 +1,9 @@
+node_modules
+dist
+build
+public
+coverage
+.git
+.hugo_build.lock
+bun.lock
+

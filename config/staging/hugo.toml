@@ -1,0 +1,16 @@
+# Staging Environment Configuration
+
+# googleAnalytics = ""
+# Disable Google Analytics in staging (or use a different ID)
+
+enableRobotsTXT = true
+# Enable robots.txt but disallow indexing in staging
+
+buildFuture = false
+buildDrafts = false
+# Don't build drafts in staging
+
+baseURL = "https://staging.example.com"
+# Staging base URL - update with your actual staging URL
+
+# This file overrides settings in config/_default/ for staging

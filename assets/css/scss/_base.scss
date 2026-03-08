@@ -1,0 +1,171 @@
+// ============================================================================
+// Base: Global styles (reset, typography, form elements)
+// ============================================================================
+
+// CSS Reset
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+// Root
+html {
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+// Body
+body {
+  font-family: $font-family-base;
+  font-size: $font-size-base;
+  line-height: $line-height-normal;
+  color: $color-text;
+  background-color: $color-bg;
+}
+
+// Typography
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-bottom: $spacing-md;
+  font-weight: 600;
+  line-height: $line-height-tight;
+}
+
+h1 {
+  font-size: $font-size-4xl;
+}
+
+h2 {
+  font-size: $font-size-3xl;
+}
+
+h3 {
+  font-size: $font-size-2xl;
+}
+
+h4 {
+  font-size: $font-size-xl;
+}
+
+h5 {
+  font-size: $font-size-lg;
+}
+
+h6 {
+  font-size: $font-size-base;
+  font-weight: 500;
+}
+
+p {
+  margin-bottom: $spacing-md;
+}
+
+a {
+  color: $color-primary;
+  text-decoration: none;
+  @include transition(color);
+
+  &:hover {
+    color: darken($color-primary, 10%);
+  }
+
+  &:focus-visible {
+    @include focus-ring;
+  }
+}
+
+// Code
+code,
+pre {
+  font-family: $font-family-mono;
+  font-size: $font-size-sm;
+}
+
+pre {
+  background-color: $color-bg-alt;
+  border: 1px solid $color-border;
+  border-radius: 4px;
+  padding: $spacing-md;
+  overflow-x: auto;
+  margin-bottom: $spacing-md;
+}
+
+code {
+  background-color: $color-bg-alt;
+  padding: $spacing-xs $spacing-sm;
+  border-radius: 2px;
+}
+
+// Lists
+ul,
+ol {
+  margin-bottom: $spacing-md;
+  margin-left: $spacing-lg;
+}
+
+li {
+  margin-bottom: $spacing-sm;
+}
+
+// Forms
+input,
+textarea,
+select {
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+  border: 1px solid $color-border;
+  border-radius: 4px;
+  padding: $spacing-sm $spacing-md;
+
+  &:focus-visible {
+    @include focus-ring;
+  }
+}
+
+textarea {
+  resize: vertical;
+}
+
+// Images
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+// Tables
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: $spacing-lg;
+}
+
+th,
+td {
+  padding: $spacing-sm $spacing-md;
+  text-align: left;
+  border-bottom: 1px solid $color-border;
+}
+
+th {
+  background-color: $color-bg-alt;
+  font-weight: 600;
+}
+
+// Utility: hr
+hr {
+  border: none;
+  border-top: 1px solid $color-border;
+  margin: $spacing-lg 0;
+}
+

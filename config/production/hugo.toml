@@ -1,0 +1,25 @@
+# Production Environment Configuration
+# This file overrides settings in config/_default/ for production
+
+# Production base URL - update with your actual domain
+baseURL = "https://danne.dev"
+
+# Don't build drafts or future content in production
+buildDrafts = false
+buildFuture = false
+
+# Enable all optimizations
+enableRobotsTXT = true
+
+# Enable Google Analytics in production
+# googleAnalytics = "G-XXXXXXXXX"  # Uncomment and set your GA4 ID
+
+# Minification settings (if using --minify flag)
+[minify]
+  disableHTML = false
+  disableCSS = false
+  disableJS = false
+  disableJSON = false
+  disableXML = false
+  disableSVG = false
+

@@ -1,0 +1,48 @@
+# Bun configuration file (optional)
+# Customize Bun's behavior for your project
+# TypeScript source: assets/ts/
+# Compiled output: assets/js/
+
+[build]
+# Enable minification for smaller output
+minify = true
+
+# Generate external source maps for debugging
+# Options: "inline" | "external" | "none"
+sourcemap = "external"
+
+# Target browsers - adjust as needed
+# Current: ES2020 (most modern browsers)
+target = "browser"
+
+# Strip console statements in production (optional)
+# Remove comment to enable
+# drop = ["console"]
+
+[test]
+# Test runner configuration
+timeout = 5000
+# Preload happy-dom globals so `document`, `window`, etc. are available in all tests
+preload = ["./tests/setup.dom.ts"]
+
+[define]
+# Global constants available in your code
+# Example: "process.env.NODE_ENV" = "\"production\""
+
+[loader]
+# Custom loaders for specific file types
+# Bun automatically handles .ts, .tsx, .js, .jsx, .json
+
+[telemetry]
+# Disable telemetry if desired
+# enabled = false
+
+# Performance tips:
+# - Bun is already extremely fast
+# - Minification is enabled by default
+# - Source maps are external (smaller main bundle)
+# - No separate minify step needed
+
+# When bundling:
+# bun build ./src/ts/main.ts --outdir ./assets/js --minify
+# This configuration file provides defaults for the above command

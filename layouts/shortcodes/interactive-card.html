@@ -1,0 +1,12 @@
+{{- $title := .Get "title" | default "Card" -}}
+{{- $expanded := .Get "expanded" | default "false" -}}
+{{- $likeCount := .Get "like-count" | default "0" -}}
+{{- /* Hybrid Web Component - defined in assets/ts/components/interactive-card.ts */}}
+<!--suppress HtmlUnknownTag -->
+<interactive-card
+  title="{{ $title }}"
+  {{- if eq $expanded "true" }}expanded{{- end }}
+  like-count="{{ $likeCount }}"
+>
+  {{- .Inner | markdownify -}}
+</interactive-card>
