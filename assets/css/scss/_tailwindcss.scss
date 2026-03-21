@@ -1,0 +1,6 @@
+@import "tailwindcss";
+
+/* Scan your project files for classes */
+@source "../../../layouts/**/*.html";
+@source "../../../content/**/*.{md,html}";
+@source "../../../assets/ts/**/*.{ts,tsx,js}";
