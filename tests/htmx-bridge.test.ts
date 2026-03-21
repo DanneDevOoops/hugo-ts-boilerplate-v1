@@ -1,5 +1,5 @@
 import { describe, it, expect, beforeEach, vi } from 'vitest';
-import { setupHTMXBridge, initializeComponents, registerComponentInitializer } from './htmx-bridge';
+import { setupHTMXBridge, initializeComponents, registerComponentInitializer } from '../assets/ts/htmx-bridge';
 
 describe('HTMX Bridge', () => {
   beforeEach(() => {
