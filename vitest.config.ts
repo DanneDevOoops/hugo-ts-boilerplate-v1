@@ -1,4 +1,5 @@
 import { defineConfig } from 'vitest/config';
+import tailwindcss from '@tailwindcss/vite';
 
 export default defineConfig({
   test: {
@@ -23,11 +24,14 @@ export default defineConfig({
       ],
     },
 
-    // Include test files
-    include: ['assets/ts/**/*.{test,spec}.ts'],
+    // Include centralized tests and optional colocated tests
+    include: [
+      'assets/ts/**/*.{test,spec}.ts',
+      'tests/**/*.{test,spec}.ts'
+    ],
 
     // Setup files (if needed)
     // setupFiles: ['./test/setup.ts'],
   },
+  plugins: [tailwindcss()],
 });
-
