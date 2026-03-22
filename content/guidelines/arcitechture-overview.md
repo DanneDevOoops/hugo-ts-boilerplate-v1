@@ -1,3 +1,11 @@
+---
+title: "State Management Architecture Overview"
+date: 2026-03-10
+draft: false
+description: "State Management Architecture Overview"
+tags: ["guidelines", "state management"]
+---
+
 # State Management Architecture Overview
 
 ## What You Get

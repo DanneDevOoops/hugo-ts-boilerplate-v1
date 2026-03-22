@@ -1,15 +1,15 @@
-+++
-date = '2026-03-07T22:38:53+01:00'
-draft = false
-title = 'Welcome to My Hugo Site'
-description = 'My first blog post using Hugo and the Blowfish theme'
-tags = ['hugo', 'blogging', 'web development']
-categories = ['Getting Started']
-showDate = true
-showAuthor = true
-showReadingTime = true
-showTableOfContents = true
-+++
+---
+date: '2026-03-07T22:38:53+01:00'
+draft: false
+title: 'Welcome to My Hugo Site1'
+description: 'My first blog post using Hugo and the Blowfish theme'
+tags: ['hugo', 'blogging', 'web development']
+categories: ['Getting Started']
+showDate: true
+showAuthor: true
+showReadingTime: true
+showTableOfContents: true
+---
 
 ## Welcome! 🎉
 

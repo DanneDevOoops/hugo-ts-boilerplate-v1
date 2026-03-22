@@ -278,7 +278,7 @@ appStore.reset();
 
 ## Resources
 
-- [API Client Docs](BACKEND_API_SETUP.md)
-- [State Management Docs](STATE_MANAGEMENT.md)
-- [Implementation Guide](STATE_MANAGEMENT_IMPLEMENTATION.md)
+- [API Client Docs](backend-api-setup.md)
+- [State Management Docs](state-management.md)
+- [Implementation Guide](stage-management-implementation.md)
 - [HTTP Caching Guide](https://developer.mozilla.org/en-US/docs/Web/HTTP/Caching)

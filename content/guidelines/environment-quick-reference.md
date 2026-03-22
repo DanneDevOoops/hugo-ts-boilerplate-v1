@@ -92,4 +92,4 @@ const apiKey = process.env.API_KEY;
 
 ## 📖 Full Documentation
 
-See [ENVIRONMENT_VARIABLES.md](ENVIRONMENT_VARIABLES.md) for complete guide.
+See [ENVIRONMENT_VARIABLES.md](environment-variables.md) for complete guide.
