@@ -1,4 +1,15 @@
-# 🐳 Docker Development Setup with Live TypeScript Reload
+---
+title: "🐳 Docker Development Setup with Live TypeScript Reload"
+date: "2026-03-25T09:00:00+01:00"
+draft: false
+description: "Set up a Docker-based Hugo development workflow with Bun TypeScript watch mode and live reload."
+tags: ["setup", "docker", "hugo", "typescript", "bun"]
+categories: ["Setup"]
+showDate: true
+showAuthor: false
+showReadingTime: true
+showTableOfContents: true
+---
 
 ## Overview
 

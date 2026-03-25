@@ -1,4 +1,30 @@
-# ⚡ Super Fast Hugo + TypeScript/JavaScript Build Guide
+---
+title: '⚡ Super Fast Hugo + TypeScript/JavaScript Build Guide'
+date: '2026-03-25T00:00:00+01:00'
+lastmod: '2026-03-25T00:00:00+01:00'
+draft: false
+
+description: 'Guide to building a fast Hugo + TypeScript pipeline with Bun, Hugo Pipes, minification, fingerprinting, and practical development/production workflows.'
+slug: 'fast-build-guide'
+
+tags:
+  - 'guidelines'
+  - 'hugo'
+  - 'bun'
+  - 'typescript'
+  - 'build'
+  - 'performance'
+  - 'optimization'
+
+categories:
+  - 'Guidelines'
+  - 'Tooling'
+
+showDate: true
+showAuthor: true
+showReadingTime: true
+showTableOfContents: true
+---
 
 This guide explains how to bundle your TypeScript/JavaScript code into your Hugo build for maximum performance.
 

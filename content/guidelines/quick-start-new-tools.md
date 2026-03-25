@@ -1,4 +1,30 @@
-# 🚀 Quick Start: New Tools Added
+---
+title: '🚀 Quick Start: New Tools Added'
+date: '2026-03-10T00:00:00+01:00'
+lastmod: '2026-03-25T00:00:00+01:00'
+draft: false
+
+description: 'Quick-start guide for using newly added tools: Vitest, @11ty/is-land, and Zod, with setup commands and practical examples.'
+slug: 'quick-start-new-tools'
+
+tags:
+  - 'guidelines'
+  - 'vitest'
+  - 'is-land'
+  - 'zod'
+  - 'tooling'
+  - 'testing'
+
+categories:
+  - 'Guidelines'
+  - 'Tooling'
+
+showDate: true
+showAuthor: true
+showReadingTime: true
+showTableOfContents: true
+---
+
 
 **Date:** March 10, 2026  
 **Tools Added:** Vitest, @11ty/is-land, Zod

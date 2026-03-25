@@ -1,4 +1,30 @@
-# Environment Variables Guide
+---
+title: 'Environment Variables Guide'
+date: '2026-03-07T22:38:53+01:00'
+lastmod: '2026-03-25T00:00:00+01:00'
+draft: false
+
+description: 'Complete guide to managing environment-specific variables, .env files, build commands, and secure configuration patterns for this Hugo project.'
+slug: 'environment-variables'
+
+tags:
+  - 'guidelines'
+  - 'environment'
+  - 'variables'
+  - 'configuration'
+  - 'hugo'
+  - 'bun'
+  - 'docker'
+
+categories:
+  - 'Guidelines'
+  - 'Configuration'
+
+showDate: true
+showAuthor: true
+showReadingTime: true
+showTableOfContents: true
+---
 
 This project supports environment-specific configuration using `.env` files. This allows you to maintain different configurations for development, staging, and production environments.
 
@@ -177,7 +203,7 @@ You can reference environment variables in your Hugo config files:
 
 ```toml
 # Use environment variable or fallback to default
-baseURL = "{{ getenv "HUGO_BASE_URL" "https://example.com" }}"
+baseURL = '{{ getenv "HUGO_BASE_URL" "https://example.com" }}'
 ```
 
 Or use Hugo's environment-specific config files:

@@ -1,4 +1,29 @@
-# State Management Quick Reference
+---
+title: 'State Management Quick Reference'
+date: '2026-03-25T00:00:00+01:00'
+lastmod: '2026-03-25T00:00:00+01:00'
+draft: false
+
+description: 'Quick reference for state management files, commands, integration snippets, and debugging patterns.'
+slug: 'state-management-quick-reference'
+
+tags:
+  - 'guidelines'
+  - 'state-management'
+  - 'quick-reference'
+  - 'typescript'
+  - 'htmx'
+  - 'hugo'
+
+categories:
+  - 'Guidelines'
+  - 'Architecture'
+
+showDate: true
+showAuthor: true
+showReadingTime: true
+showTableOfContents: true
+---
 
 ## Files Created
 
@@ -279,6 +304,6 @@ appStore.reset();
 ## Resources
 
 - [API Client Docs](backend-api-setup.md)
-- [State Management Docs](state-management.md)
+- [State Management Docs](state-management-guide.md)
 - [Implementation Guide](stage-management-implementation.md)
 - [HTTP Caching Guide](https://developer.mozilla.org/en-US/docs/Web/HTTP/Caching)

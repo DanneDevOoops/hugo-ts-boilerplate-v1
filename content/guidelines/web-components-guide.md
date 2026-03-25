@@ -1,4 +1,29 @@
-# Using Web Components in Hugo Markdown
+---
+title: 'Using Web Components in Hugo Markdown'
+date: '2026-03-25T00:00:00+01:00'
+lastmod: '2026-03-25T00:00:00+01:00'
+draft: false
+
+description: 'Guide to integrating and using Lit-based Web Components inside Hugo markdown content and templates.'
+slug: 'web-components-guide'
+
+tags:
+  - 'guidelines'
+  - 'web-components'
+  - 'lit'
+  - 'hugo'
+  - 'frontend'
+  - 'components'
+
+categories:
+  - 'Guidelines'
+  - 'Frontend'
+
+showDate: true
+showAuthor: true
+showReadingTime: true
+showTableOfContents: true
+---
 
 This guide explains how to use the `hello-card` web component (and other Lit-based components) in your Hugo markdown files.
 

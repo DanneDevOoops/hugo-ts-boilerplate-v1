@@ -1,4 +1,15 @@
-# TypeScript + Bun Setup for Hugo
+---
+title: "TypeScript + Bun Setup for Hugo"
+date: "2026-03-25T09:40:00+01:00"
+draft: false
+description: "Comprehensive guide to configuring TypeScript and Bun as the JavaScript toolchain for Hugo."
+tags: ["setup", "typescript", "bun", "hugo", "tooling"]
+categories: ["Setup"]
+showDate: true
+showAuthor: false
+showReadingTime: true
+showTableOfContents: true
+---
 
 This Hugo site now uses **TypeScript** and **Bun** as the package manager and build tool for JavaScript bundling.
 

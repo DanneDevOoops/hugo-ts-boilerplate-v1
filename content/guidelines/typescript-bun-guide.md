@@ -1,4 +1,15 @@
-# TypeScript + Bun Implementation Guide
+---
+title: 'TypeScript + Bun Implementation Guide'
+date: 2026-03-10
+draft: false
+description: 'Practical guide for using TypeScript with Bun in your Hugo project, including build commands, project structure, debugging, and best practices.'
+slug: 'typescript-bun-guide'
+tags: ['guidelines', 'typescript', 'bun', 'hugo', 'tooling']
+categories: ['Guidelines', 'Tooling']
+showDate: true
+showReadingTime: true
+showTableOfContents: true
+---
 
 ## Overview
 

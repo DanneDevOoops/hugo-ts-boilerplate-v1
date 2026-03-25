@@ -1,4 +1,15 @@
-# ✅ HTMX Bundled Configuration Complete
+---
+title: "✅ HTMX Bundled Configuration Complete"
+date: "2026-03-25T09:05:00+01:00"
+draft: false
+description: "Summary of bundling HTMX via Bun instead of loading from a CDN."
+tags: ["setup", "htmx", "bun", "typescript", "architecture"]
+categories: ["Setup"]
+showDate: true
+showAuthor: false
+showReadingTime: true
+showTableOfContents: true
+---
 
 ## Summary
 

@@ -1,49 +1,104 @@
-# HTMX + Web Components Quick Reference
+---
+title: 'HTMX + Web Components Quick Reference'
+date: '2026-03-25T00:00:00+01:00'
+lastmod: '2026-03-25T00:00:00+01:00'
+draft: false
+
+description: 'Quick reference for HTMX attributes, events, integration patterns, Hugo shortcodes, and Web Components usage in this project.'
+slug: 'htmx-quick-reference'
+
+tags:
+  - 'guidelines'
+  - 'htmx'
+  - 'web-components'
+  - 'quick-reference'
+  - 'shortcodes'
+  - 'lit'
+  - 'frontend'
+
+categories:
+  - 'Guidelines'
+  - 'Frontend'
+
+showDate: true
+showAuthor: true
+showReadingTime: true
+showTableOfContents: true
+---
 
 ## HTMX Attributes
 
 ### Common Attributes
+
 ```html
-hx-get="/endpoint"          <!-- GET request -->
-hx-post="/endpoint"         <!-- POST request -->
-hx-put="/endpoint"          <!-- PUT request -->
-hx-delete="/endpoint"       <!-- DELETE request -->
+hx-get="/endpoint"
+<!-- GET request -->
+hx-post="/endpoint"
+<!-- POST request -->
+hx-put="/endpoint"
+<!-- PUT request -->
+hx-delete="/endpoint"
+<!-- DELETE request -->
 
-hx-target="#element-id"     <!-- Where to swap content -->
-hx-swap="innerHTML"         <!-- How to swap (innerHTML, outerHTML, beforeend, etc) -->
-hx-trigger="click"          <!-- What triggers the request -->
-hx-indicator="#spinner"     <!-- Loading indicator element -->
+hx-target="#element-id"
+<!-- Where to swap content -->
+hx-swap="innerHTML"
+<!-- How to swap (innerHTML, outerHTML, beforeend, etc) -->
+hx-trigger="click"
+<!-- What triggers the request -->
+hx-indicator="#spinner"
+<!-- Loading indicator element -->
 
-hx-push-url="true"          <!-- Update browser URL -->
-hx-confirm="Are you sure?"  <!-- Confirmation dialog -->
+hx-push-url="true"
+<!-- Update browser URL -->
+hx-confirm="Are you sure?"
+<!-- Confirmation dialog -->
 ```
 
 ### Swap Strategies
+
 ```html
-hx-swap="innerHTML"         <!-- Replace inner content (default) -->
-hx-swap="outerHTML"         <!-- Replace entire element -->
-hx-swap="beforebegin"       <!-- Insert before element -->
-hx-swap="afterbegin"        <!-- Insert at start of element -->
-hx-swap="beforeend"         <!-- Insert at end of element -->
-hx-swap="afterend"          <!-- Insert after element -->
-hx-swap="delete"            <!-- Delete element -->
-hx-swap="none"              <!-- Don't swap, but trigger events -->
+hx-swap="innerHTML"
+<!-- Replace inner content (default) -->
+hx-swap="outerHTML"
+<!-- Replace entire element -->
+hx-swap="beforebegin"
+<!-- Insert before element -->
+hx-swap="afterbegin"
+<!-- Insert at start of element -->
+hx-swap="beforeend"
+<!-- Insert at end of element -->
+hx-swap="afterend"
+<!-- Insert after element -->
+hx-swap="delete"
+<!-- Delete element -->
+hx-swap="none"
+<!-- Don't swap, but trigger events -->
 ```
 
 ### Triggers
+
 ```html
-hx-trigger="click"                    <!-- On click -->
-hx-trigger="load"                     <!-- On load -->
-hx-trigger="change"                   <!-- On input change -->
-hx-trigger="keyup changed delay:500ms" <!-- Debounced input -->
-hx-trigger="every 2s"                 <!-- Polling -->
-hx-trigger="click from:button"        <!-- Event delegation -->
-hx-trigger="revealed"                 <!-- When scrolled into view -->
+hx-trigger="click"
+<!-- On click -->
+hx-trigger="load"
+<!-- On load -->
+hx-trigger="change"
+<!-- On input change -->
+hx-trigger="keyup changed delay:500ms"
+<!-- Debounced input -->
+hx-trigger="every 2s"
+<!-- Polling -->
+hx-trigger="click from:button"
+<!-- Event delegation -->
+hx-trigger="revealed"
+<!-- When scrolled into view -->
 ```
 
 ## Web Component Patterns
 
 ### Basic Component
+
 ```typescript
 import { LitElement, html, css } from 'lit';
 
@@ -67,6 +122,7 @@ customElements.define('my-component', MyComponent);
 ```
 
 ### Component with Events
+
 ```typescript
 private handleClick(): void {
   this.dispatchEvent(new CustomEvent('my-event', {
@@ -78,6 +134,7 @@ private handleClick(): void {
 ```
 
 ### Using Slots
+
 ```typescript
 render() {
   return html`
@@ -94,6 +151,7 @@ render() {
 ## Hugo Shortcodes
 
 ### Using Components in Markdown
+
 ```markdown
 {{</* interactive-card title="My Title" expanded="true" */>}}
 Content goes here...
@@ -105,17 +163,17 @@ Content goes here...
 ```
 
 ### Creating New Shortcodes
+
 ```html
 <!-- layouts/shortcodes/my-shortcode.html -->
 {{- $param := .Get "param" | default "default" -}}
-<my-component param="{{ $param }}">
-  {{- .Inner | markdownify -}}
-</my-component>
+<my-component param="{{ $param }}"> {{- .Inner | markdownify -}} </my-component>
 ```
 
 ## HTMX + Components Integration
 
 ### Pattern: Component in HTMX Response
+
 ```html
 <!-- Server returns this HTML fragment -->
 <div id="content">
@@ -126,11 +184,9 @@ Content goes here...
 ```
 
 ### Pattern: HTMX Trigger from Component
+
 ```html
-<my-component hx-trigger="custom-event" 
-              hx-get="/endpoint"
-              hx-target="#result">
-</my-component>
+<my-component hx-trigger="custom-event" hx-get="/endpoint" hx-target="#result"> </my-component>
 ```
 
 ```typescript
@@ -139,11 +195,9 @@ this.dispatchEvent(new CustomEvent('custom-event'));
 ```
 
 ### Pattern: Update Component from HTMX
+
 ```html
-<button hx-get="/api/data" 
-        hx-on:htmx:afterSwap="updateComponent(event)">
-  Fetch Data
-</button>
+<button hx-get="/api/data" hx-on:htmx:afterSwap="updateComponent(event)">Fetch Data</button>
 
 <my-component id="my-comp"></my-component>
 
@@ -158,6 +212,7 @@ this.dispatchEvent(new CustomEvent('custom-event'));
 ## HTMX Events
 
 ### Listening to HTMX Events
+
 ```javascript
 // In your component or page
 document.body.addEventListener('htmx:beforeSwap', (e) => {
@@ -174,6 +229,7 @@ document.body.addEventListener('htmx:load', (e) => {
 ```
 
 ### Common HTMX Events
+
 - `htmx:beforeRequest` - Before AJAX request
 - `htmx:afterRequest` - After AJAX request
 - `htmx:beforeSwap` - Before content swap
@@ -184,26 +240,22 @@ document.body.addEventListener('htmx:load', (e) => {
 ## Hugo Partials for HTMX
 
 ### Creating Fragment Partials
+
 ```html
 <!-- layouts/partials/fragments/my-fragment.html -->
 <div id="fragment-container">
   {{- range .Items -}}
-    <interactive-card title="{{ .Title }}">
-      {{ .Content }}
-    </interactive-card>
-  {{- end -}}
-  
-  {{- if .HasMore -}}
-    <button hx-get="{{ .NextURL }}" 
-            hx-target="#fragment-container"
-            hx-swap="outerHTML">
-      Load More
-    </button>
+  <interactive-card title="{{ .Title }}"> {{ .Content }} </interactive-card>
+  {{- end -}} {{- if .HasMore -}}
+  <button hx-get="{{ .NextURL }}" hx-target="#fragment-container" hx-swap="outerHTML">
+    Load More
+  </button>
   {{- end -}}
 </div>
 ```
 
 ### Using Fragment Partials
+
 ```html
 <!-- In a layout or page -->
 {{ partial "fragments/my-fragment.html" . }}
@@ -212,39 +264,32 @@ document.body.addEventListener('htmx:load', (e) => {
 ## Common Recipes
 
 ### Recipe: Infinite Scroll
+
 ```html
 <div id="posts">
   {{- range .Paginator.Pages -}}
-    <article>{{ .Title }}</article>
-  {{- end -}}
-  
-  {{- if .Paginator.HasNext -}}
-    <div hx-get="{{ .Paginator.Next.URL }}"
-         hx-trigger="revealed"
-         hx-swap="afterend">
-      <span class="loading">Loading...</span>
-    </div>
+  <article>{{ .Title }}</article>
+  {{- end -}} {{- if .Paginator.HasNext -}}
+  <div hx-get="{{ .Paginator.Next.URL }}" hx-trigger="revealed" hx-swap="afterend">
+    <span class="loading">Loading...</span>
+  </div>
   {{- end -}}
 </div>
 ```
 
 ### Recipe: Inline Edit
+
 ```html
 <div id="content-{{ .ID }}">
   <p>{{ .Content }}</p>
-  <button hx-get="/edit/{{ .ID }}"
-          hx-target="#content-{{ .ID }}"
-          hx-swap="outerHTML">
-    Edit
-  </button>
+  <button hx-get="/edit/{{ .ID }}" hx-target="#content-{{ .ID }}" hx-swap="outerHTML">Edit</button>
 </div>
 ```
 
 ### Recipe: Form with Validation
+
 ```html
-<form hx-post="/api/submit"
-      hx-target="#form-result"
-      hx-swap="innerHTML">
+<form hx-post="/api/submit" hx-target="#form-result" hx-swap="innerHTML">
   <input type="text" name="name" required />
   <rich-editor name="content"></rich-editor>
   <button type="submit">Submit</button>
@@ -254,24 +299,24 @@ document.body.addEventListener('htmx:load', (e) => {
 ```
 
 ### Recipe: Modal/Dialog
+
 ```html
-<button hx-get="/modal/content"
-        hx-target="#modal-container"
-        hx-swap="innerHTML">
-  Open Modal
-</button>
+<button hx-get="/modal/content" hx-target="#modal-container" hx-swap="innerHTML">Open Modal</button>
 
 <dialog-component id="modal-container"></dialog-component>
 ```
 
 ### Recipe: Live Search
+
 ```html
-<input type="search"
-       name="q"
-       hx-get="/search"
-       hx-trigger="keyup changed delay:500ms"
-       hx-target="#search-results"
-       hx-indicator="#search-spinner" />
+<input
+  type="search"
+  name="q"
+  hx-get="/search"
+  hx-trigger="keyup changed delay:500ms"
+  hx-target="#search-results"
+  hx-indicator="#search-spinner"
+/>
 
 <div id="search-spinner" class="htmx-indicator">🔄</div>
 <div id="search-results"></div>
@@ -280,16 +325,19 @@ document.body.addEventListener('htmx:load', (e) => {
 ## Debugging
 
 ### Enable HTMX Logging
+
 ```javascript
 htmx.logAll(); // In browser console
 ```
 
 ### Check Component Registration
+
 ```javascript
 console.log(customElements.get('my-component'));
 ```
 
 ### Monitor All Events
+
 ```javascript
 // HTMX events
 document.body.addEventListener('htmx:*', console.log);
@@ -323,13 +371,12 @@ declare global {
 ✅ Debounce inputs with `delay:500ms`  
 ✅ Cache fragments on server side  
 ✅ Lazy-load components with dynamic imports  
-✅ Use `hx-preserve="true"` to keep elements across swaps  
+✅ Use `hx-preserve="true"` to keep elements across swaps
 
 ## Resources
 
-- 📚 [Full Architecture Guide](./htmx-web-components-architecture.md)
+- 📚 [Full Architecture Guide](htmx-web-components-architecture.md)
 - 🔗 [HTMX Docs](https://htmx.org/docs/)
 - 🔗 [Lit Docs](https://lit.dev/)
 - 📁 Example components: `assets/ts/components/`
 - 📁 Example fragments: `layouts/partials/fragments/`
-

@@ -1,4 +1,29 @@
-# TypeScript + Bun Workflow Diagram
+---
+title: 'TypeScript + Bun Workflow Diagram'
+date: '2026-03-25T00:00:00+01:00'
+lastmod: '2026-03-25T00:00:00+01:00'
+draft: false
+
+description: 'Workflow diagrams for TypeScript and Bun build processes, development loops, and deployment flow in this project.'
+slug: 'workflow-diagrams'
+
+tags:
+  - 'guidelines'
+  - 'workflow'
+  - 'diagrams'
+  - 'typescript'
+  - 'bun'
+  - 'build'
+
+categories:
+  - 'Guidelines'
+  - 'Tooling'
+
+showDate: true
+showAuthor: true
+showReadingTime: true
+showTableOfContents: true
+---
 
 ## Build Process Flow
 

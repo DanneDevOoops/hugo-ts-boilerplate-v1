@@ -1,4 +1,15 @@
-# TypeScript + Bun Setup Checklist
+---
+title: "TypeScript + Bun Setup Checklist"
+date: "2026-03-25T09:30:00+01:00"
+draft: false
+description: "Step-by-step checklist for installing and validating TypeScript + Bun in Hugo."
+tags: ["setup", "checklist", "typescript", "bun", "hugo"]
+categories: ["Setup"]
+showDate: true
+showAuthor: false
+showReadingTime: true
+showTableOfContents: true
+---
 
 ## ✅ Pre-Setup Verification
 

@@ -1,4 +1,31 @@
-# ESLint and Prettier Setup Guide
+---
+title: 'ESLint and Prettier Guide'
+date: '2026-03-25T00:00:00+01:00'
+lastmod: '2026-03-25T00:00:00+01:00'
+draft: false
+
+description: 'Guide to linting and formatting with ESLint, Prettier, and typescript-eslint in this Hugo, TypeScript, and Bun project.'
+slug: 'eslint-prettier-guide'
+
+tags:
+  - 'guidelines'
+  - 'eslint'
+  - 'prettier'
+  - 'typescript'
+  - 'tooling'
+  - 'formatting'
+  - 'code-quality'
+  - 'bun'
+
+categories:
+  - 'Guidelines'
+  - 'Tooling'
+
+showDate: true
+showAuthor: true
+showReadingTime: true
+showTableOfContents: true
+---
 
 This project is configured with **ESLint** for code quality and **Prettier** for code formatting.
 

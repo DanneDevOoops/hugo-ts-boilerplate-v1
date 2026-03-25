@@ -1,4 +1,26 @@
-# Blowfish Theme Guide
+---
+date: '2026-03-07T22:38:53+01:00'
+lastmod: '2026-03-25T00:00:00+01:00'
+title: 'Blowfish Theme Guide'
+description: 'Overview of the Blowfish Hugo theme, including current project configuration, customization options, features, and best practices for this site.'
+draft: false
+slug: 'blowfish-theme-guide'
+tags:
+  - 'hugo'
+  - 'blowfish'
+  - 'theme'
+  - 'configuration'
+  - 'guidelines'
+  - 'customization'
+categories:
+  - 'Guidelines'
+  - 'Hugo'
+  - 'Theme'
+showDate: true
+showAuthor: true
+showReadingTime: true
+showTableOfContents: true
+---
 
 ## Overview
 

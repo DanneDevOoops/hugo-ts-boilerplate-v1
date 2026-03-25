@@ -1,4 +1,31 @@
-# HTMX + Web Components Hybrid Architecture
+---
+title: 'HTMX + Web Components Hybrid Architecture'
+date: '2026-03-25T00:00:00+01:00'
+lastmod: '2026-03-25T00:00:00+01:00'
+draft: false
+
+description: 'Architecture guide for combining HTMX server-driven interactions with Web Components to build progressively enhanced, reusable, and performant Hugo frontends.'
+slug: 'htmx-web-components-architecture'
+
+tags:
+  - 'guidelines'
+  - 'architecture'
+  - 'htmx'
+  - 'web-components'
+  - 'progressive-enhancement'
+  - 'frontend'
+  - 'hugo'
+  - 'lit'
+
+categories:
+  - 'Guidelines'
+  - 'Architecture'
+
+showDate: true
+showAuthor: true
+showReadingTime: true
+showTableOfContents: true
+---
 
 This document outlines the hybrid architecture implementation combining HTMX for server-rendered interactions and Web Components for reusable interactive widgets.
 
@@ -13,6 +40,7 @@ The hybrid approach provides SPA-like user experience without the complexity of 
 ## Responsibility Split
 
 ### HTMX Owns (Server-Driven)
+
 - Navigation-ish partial updates
 - Form submits and validation
 - Table/list refreshes
@@ -21,6 +49,7 @@ The hybrid approach provides SPA-like user experience without the complexity of 
 - Server state management
 
 ### Web Components Own (Client-Driven)
+
 - Date pickers and rich inputs
 - Toggles and switches
 - Media widgets
@@ -29,9 +58,11 @@ The hybrid approach provides SPA-like user experience without the complexity of 
 - Ephemeral UI state
 
 ### Hybrid Pattern (Both)
+
 HTMX swaps in HTML containing `<my-component>` tags, and components hydrate automatically.
 
 **Example:**
+
 ```html
 <!-- HTMX fetches this fragment -->
 <div id="article-preview">
@@ -56,7 +87,7 @@ bun add htmx.org
 
 ```typescript
 // assets/ts/main.ts
-import 'htmx.org';  // Bundled into main.js
+import 'htmx.org'; // Bundled into main.js
 ```
 
 The bundled `main.js` is loaded in `layouts/partials/extend-head.html`.
@@ -92,6 +123,7 @@ Server-rendered fragments live in `layouts/partials/fragments/`:
 - `search-results.html` - Search results panel
 
 Fragments should:
+
 - Have stable container IDs for HTMX targeting
 - Include HTMX attributes for progressive interactions
 - Be self-contained (can work as initial render or swap)
@@ -109,11 +141,13 @@ Shortcodes expose components to content authors:
 ### State Management
 
 **Server as Source of Truth:**
+
 - Business logic and data state live on the server
 - HTMX requests refresh server state
 - Components emit events for server sync when needed
 
 **Component State is Ephemeral:**
+
 - UI state (expanded/collapsed, local selections) lives in components
 - Don't duplicate server state in components
 - Use attributes for initial state from server
@@ -121,6 +155,7 @@ Shortcodes expose components to content authors:
 ### Lifecycle Management
 
 **HTMX Swaps:**
+
 ```typescript
 // Components automatically re-hydrate on htmx:load
 document.body.addEventListener('htmx:load', (event) => {
@@ -130,6 +165,7 @@ document.body.addEventListener('htmx:load', (event) => {
 ```
 
 **Component Cleanup:**
+
 ```typescript
 // Optional cleanup before swap
 document.body.addEventListener('htmx:beforeSwap', (event) => {
@@ -141,21 +177,26 @@ document.body.addEventListener('htmx:beforeSwap', (event) => {
 ### Event Communication
 
 **Component → Page:**
+
 ```typescript
-this.dispatchEvent(new CustomEvent('card-liked', {
-  detail: { id: this.id, liked: true },
-  bubbles: true,
-  composed: true,
-}));
+this.dispatchEvent(
+  new CustomEvent('card-liked', {
+    detail: { id: this.id, liked: true },
+    bubbles: true,
+    composed: true,
+  }),
+);
 ```
 
 **Page → Component:**
+
 ```typescript
 // Use attributes or properties
 document.querySelector('interactive-card').setAttribute('expanded', 'true');
 ```
 
 **HTMX → Component:**
+
 ```typescript
 // Listen to HTMX events in components if needed
 this.addEventListener('htmx:afterSwap', (e) => {
@@ -184,11 +225,7 @@ this.addEventListener('htmx:afterSwap', (e) => {
 ```html
 <div id="post-list">
   <!-- Server renders posts -->
-  <button hx-get="/posts?page=2" 
-          hx-target="#post-list" 
-          hx-swap="outerHTML">
-    Load More
-  </button>
+  <button hx-get="/posts?page=2" hx-target="#post-list" hx-swap="outerHTML">Load More</button>
 </div>
 ```
 
@@ -203,15 +240,12 @@ this.addEventListener('htmx:afterSwap', (e) => {
 
 ```html
 <!-- HTMX fetches list items -->
-<div id="article-list" 
-     hx-get="/articles?tag=tech"
-     hx-trigger="load">
-  
+<div id="article-list" hx-get="/articles?tag=tech" hx-trigger="load">
   <!-- Each item is a component -->
   <interactive-card title="Article 1" like-count="10">
     <p>Content...</p>
   </interactive-card>
-  
+
   <interactive-card title="Article 2" like-count="5">
     <p>More content...</p>
   </interactive-card>
@@ -221,16 +255,13 @@ this.addEventListener('htmx:afterSwap', (e) => {
 ### Pattern 4: Form with Component Enhancement
 
 ```html
-<form hx-post="/api/submit" 
-      hx-target="#form-result"
-      hx-swap="innerHTML">
-  
+<form hx-post="/api/submit" hx-target="#form-result" hx-swap="innerHTML">
   <!-- Regular inputs -->
   <input type="text" name="title" />
-  
+
   <!-- Component-enhanced input -->
   <rich-editor name="content"></rich-editor>
-  
+
   <button type="submit">Submit</button>
 </form>
 
@@ -268,6 +299,7 @@ document.addEventListener('components:initialized', (e) => {
 For HTMX fragments, you need endpoints that return HTML:
 
 ### Option A: In-Repo Go Service
+
 ```go
 // Serve HTML fragments
 http.HandleFunc("/fragments/posts", func(w http.ResponseWriter, r *http.Request) {
@@ -278,11 +310,13 @@ http.HandleFunc("/fragments/posts", func(w http.ResponseWriter, r *http.Request)
 ```
 
 ### Option B: Hugo Server + Serverless
+
 - Hugo serves static content
 - Serverless functions serve dynamic fragments
 - CORS configured appropriately
 
 ### Option C: Separate API Service
+
 - Dedicated service for HTML fragments
 - Shared templates between Hugo and service
 - Caching at CDN layer
@@ -313,8 +347,8 @@ http.HandleFunc("/fragments/posts", func(w http.ResponseWriter, r *http.Request)
 ## Support
 
 For questions or issues:
+
 1. Check this documentation
 2. Review example components in `assets/ts/components/`
 3. Check fragment examples in `layouts/partials/fragments/`
 4. Review shortcode usage in `layouts/shortcodes/`
-

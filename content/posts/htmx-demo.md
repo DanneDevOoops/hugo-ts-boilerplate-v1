@@ -1,9 +1,14 @@
 ---
 title: "HTMX + Web Components Demo"
-date: 2026-03-10
+date: "2026-03-10T10:00:00+01:00"
 draft: false
-description: "Interactive demonstration of HTMX and Web Components working together"
-tags: ["demo", "htmx", "web-components"]
+description: "Interactive demonstration of HTMX and Web Components working together."
+tags: ["demo", "htmx", "web-components", "hugo"]
+categories: ["Development"]
+showDate: true
+showAuthor: true
+showReadingTime: true
+showTableOfContents: true
 ---
 
 # HTMX + Web Components Hybrid Demo

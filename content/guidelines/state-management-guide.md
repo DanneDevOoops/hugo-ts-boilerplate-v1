@@ -1,4 +1,29 @@
-# State Management Guide
+---
+title: 'State Management Guide'
+date: '2026-03-25T00:00:00+01:00'
+lastmod: '2026-03-25T00:00:00+01:00'
+draft: false
+
+description: 'Best practices for managing frontend state with API-backed data, caching, and performance-aware patterns in Hugo + TypeScript projects.'
+slug: 'state-management-guide'
+
+tags:
+  - 'guidelines'
+  - 'state-management'
+  - 'frontend'
+  - 'backend'
+  - 'caching'
+  - 'typescript'
+
+categories:
+  - 'Guidelines'
+  - 'Architecture'
+
+showDate: true
+showAuthor: true
+showReadingTime: true
+showTableOfContents: true
+---
 
 ## Overview
 

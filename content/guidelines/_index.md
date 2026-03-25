@@ -1,3 +1,26 @@
+---
+title: 'Guidelines Documentation Index'
+date: '2026-03-25T00:00:00+01:00'
+lastmod: '2026-03-25T00:00:00+01:00'
+draft: false
+
+description: 'Index of setup guides, architecture references, quick references, and implementation notes for this project.'
+
+tags:
+  - 'guidelines'
+  - 'documentation'
+  - 'index'
+  - 'state-management'
+
+categories:
+  - 'Guidelines'
+
+showDate: false
+showAuthor: false
+showReadingTime: false
+showTableOfContents: true
+---
+
 # State Management System - Documentation Index
 
 ## 🎯 Start Here

@@ -1,4 +1,15 @@
-# TypeScript + Bun Implementation Summary
+---
+title: "TypeScript + Bun Implementation Summary"
+date: "2026-03-25T09:35:00+01:00"
+draft: false
+description: "Overview of what was implemented for TypeScript + Bun integration in this Hugo project."
+tags: ["setup", "summary", "typescript", "bun", "hugo"]
+categories: ["Setup"]
+showDate: true
+showAuthor: false
+showReadingTime: true
+showTableOfContents: true
+---
 
 ## ✅ What Has Been Set Up
 

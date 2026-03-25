@@ -1,17 +1,15 @@
 ---
-date: '2026-03-07T22:38:53+01:00'
+title: "Welcome to My Hugo Site! 🎉"
+date: "2026-03-07T22:38:53+01:00"
 draft: false
-title: 'Welcome to My Hugo Site1'
-description: 'My first blog post using Hugo and the Blowfish theme'
-tags: ['hugo', 'blogging', 'web development']
-categories: ['Getting Started']
+description: "My first blog post using Hugo and the Blowfish theme."
+tags: ["hugo", "blogging", "web-development"]
+categories: ["Getting Started"]
 showDate: true
 showAuthor: true
 showReadingTime: true
 showTableOfContents: true
 ---
-
-## Welcome! 🎉
 
 This is my first blog post created with Hugo! Hugo is an amazing static site generator that makes it easy to create fast, secure websites.
 

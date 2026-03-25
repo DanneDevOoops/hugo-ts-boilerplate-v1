@@ -1,4 +1,15 @@
-# HTMX + Web Components Hybrid Setup
+---
+title: "HTMX + Web Components Hybrid Setup"
+date: "2026-03-25T09:15:00+01:00"
+draft: false
+description: "Guide for combining HTMX and Web Components in a Hugo site using a hybrid architecture."
+tags: ["setup", "htmx", "web-components", "lit", "hugo"]
+categories: ["Setup"]
+showDate: true
+showAuthor: false
+showReadingTime: true
+showTableOfContents: true
+---
 
 Your Hugo project is now configured with a hybrid architecture combining HTMX and Web Components!
 

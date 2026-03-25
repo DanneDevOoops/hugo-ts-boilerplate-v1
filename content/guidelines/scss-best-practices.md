@@ -1,4 +1,29 @@
-# SCSS Folder Structure & Best Practices Guide
+---
+title: 'SCSS Folder Structure and Best Practices Guide'
+date: '2026-03-25T00:00:00+01:00'
+lastmod: '2026-03-25T00:00:00+01:00'
+draft: false
+
+description: 'Guide to organizing SCSS files, naming conventions, and maintainable styling patterns for this project.'
+slug: 'scss-best-practices'
+
+tags:
+  - 'guidelines'
+  - 'scss'
+  - 'css'
+  - 'frontend'
+  - 'styling'
+  - 'architecture'
+
+categories:
+  - 'Guidelines'
+  - 'Frontend'
+
+showDate: true
+showAuthor: true
+showReadingTime: true
+showTableOfContents: true
+---
 
 ## 📁 Your Current Structure
 

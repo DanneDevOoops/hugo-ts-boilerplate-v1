@@ -1,4 +1,15 @@
-# Quick Start: TypeScript + Bun for Hugo
+---
+title: "Quick Start: TypeScript + Bun for Hugo"
+date: "2026-03-25T09:25:00+01:00"
+draft: false
+description: "Fast 5-minute setup for TypeScript and Bun in a Hugo project."
+tags: ["setup", "quickstart", "typescript", "bun", "hugo"]
+categories: ["Setup"]
+showDate: true
+showAuthor: false
+showReadingTime: true
+showTableOfContents: true
+---
 
 ## ⚡ 5-Minute Setup
 

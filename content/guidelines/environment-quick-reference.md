@@ -1,4 +1,29 @@
-# Environment Variables - Quick Reference
+---
+title: 'Environment Variables Quick Reference'
+date: '2026-03-25T00:00:00+01:00'
+lastmod: '2026-03-25T00:00:00+01:00'
+draft: false
+
+description: 'Quick lookup guide for development, staging, and production environment commands, file layout, and variable usage in this Hugo project.'
+slug: 'environment-quick-reference'
+
+tags:
+  - 'guidelines'
+  - 'environment'
+  - 'quick-reference'
+  - 'configuration'
+  - 'hugo'
+  - 'bun'
+
+categories:
+  - 'Guidelines'
+  - 'Configuration'
+
+showDate: true
+showAuthor: true
+showReadingTime: true
+showTableOfContents: true
+---
 
 ## 🚀 Quick Commands
 

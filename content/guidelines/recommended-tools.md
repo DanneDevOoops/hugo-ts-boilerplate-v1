@@ -1,4 +1,30 @@
-# 🛠️ Recommended Tools for Your Hugo + TypeScript + HTMX Project
+---
+title: '🛠️ Recommended Tools for Your Hugo + TypeScript + HTMX Project'
+date: '2026-03-10T00:00:00+01:00'
+lastmod: '2026-03-25T00:00:00+01:00'
+draft: false
+
+description: 'Prioritized recommendations for testing, validation, hydration, CI/CD, and developer tooling in this Hugo + TypeScript project.'
+slug: 'recommended-tools'
+
+tags:
+  - 'guidelines'
+  - 'tooling'
+  - 'vitest'
+  - 'zod'
+  - 'is-land'
+  - 'hugo'
+  - 'typescript'
+
+categories:
+  - 'Guidelines'
+  - 'Tooling'
+
+showDate: true
+showAuthor: true
+showReadingTime: true
+showTableOfContents: true
+---
 
 **Analysis Date:** March 10, 2026  
 **Project Type:** Hugo Static Site with TypeScript, Bun, HTMX, Lit Web Components

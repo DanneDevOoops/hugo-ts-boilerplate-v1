@@ -1,4 +1,15 @@
-# Quick Verification Checklist
+---
+title: "HTMX Bundled Setup Verification Checklist"
+date: "2026-03-25T09:10:00+01:00"
+draft: false
+description: "Checklist to verify HTMX is installed, bundled, and working correctly in the Hugo project."
+tags: ["setup", "htmx", "checklist", "verification", "bun"]
+categories: ["Setup"]
+showDate: true
+showAuthor: false
+showReadingTime: true
+showTableOfContents: true
+---
 
 ## ✅ HTMX Bundled Setup Complete
 

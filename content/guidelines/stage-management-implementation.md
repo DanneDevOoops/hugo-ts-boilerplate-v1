@@ -1,4 +1,29 @@
-# State Management Implementation Guide
+---
+title: 'State Management Implementation Guide'
+date: '2026-03-25T00:00:00+01:00'
+lastmod: '2026-03-25T00:00:00+01:00'
+draft: false
+
+description: 'Step-by-step implementation guide for integrating state management patterns, services, and workflows in this project.'
+slug: 'stage-management-implementation'
+
+tags:
+  - 'guidelines'
+  - 'state-management'
+  - 'implementation'
+  - 'typescript'
+  - 'hugo'
+  - 'htmx'
+
+categories:
+  - 'Guidelines'
+  - 'Architecture'
+
+showDate: true
+showAuthor: true
+showReadingTime: true
+showTableOfContents: true
+---
 
 ## Quick Start
 

@@ -1,4 +1,31 @@
-# State Management Environment Configuration
+---
+title: 'Environment Configuration'
+date: '2026-03-07T22:38:53+01:00'
+lastmod: '2026-03-25T00:00:00+01:00'
+draft: false
+
+description: 'Reference guide for configuring frontend and backend environment variables across development, staging, production, and test environments in this Hugo-based project.'
+slug: 'environment-configuration'
+
+tags:
+  - 'guidelines'
+  - 'environment'
+  - 'configuration'
+  - 'vite'
+  - 'frontend'
+  - 'backend'
+  - 'deployment'
+  - 'caching'
+
+categories:
+  - 'Guidelines'
+  - 'Configuration'
+
+showDate: true
+showAuthor: true
+showReadingTime: true
+showTableOfContents: true
+---
 
 ## Frontend Environment Variables
 

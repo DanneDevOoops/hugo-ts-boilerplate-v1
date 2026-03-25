@@ -1,12 +1,31 @@
 ---
-title: "State Management Architecture Overview"
+title: 'State Management Architecture Overview'
 date: 2026-03-10
+lastmod: 2026-03-25
 draft: false
-description: "State Management Architecture Overview"
-tags: ["guidelines", "state management"]
----
 
-# State Management Architecture Overview
+description: 'Architecture and data-flow overview for a lightweight state management system in Hugo + HTMX + TypeScript, including cache strategy, service boundaries, and performance patterns.'
+slug: 'architecture-overview'
+aliases:
+  - '/guidelines/arcitechture-overview/'
+
+tags:
+  - 'guidelines'
+  - 'state management'
+  - 'architecture'
+  - 'typescript'
+  - 'htmx'
+  - 'caching'
+  - 'hugo'
+
+categories:
+  - 'Guidelines'
+  - 'Architecture'
+
+showDate: true
+showReadingTime: true
+showTableOfContents: true
+---
 
 ## What You Get
 

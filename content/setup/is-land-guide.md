@@ -1,4 +1,15 @@
-# Using @11ty/is-land for Progressive Hydration
+---
+title: "Using @11ty/is-land for Progressive Hydration"
+date: "2026-03-25T09:20:00+01:00"
+draft: false
+description: "Guide to progressive hydration with @11ty/is-land for improved performance in interactive Hugo pages."
+tags: ["setup", "performance", "islands-architecture", "web-components", "hugo"]
+categories: ["Setup"]
+showDate: true
+showAuthor: false
+showReadingTime: true
+showTableOfContents: true
+---
 
 ## Overview
 `@11ty/is-land` enables "islands architecture" - loading JavaScript components only when they're needed. This significantly improves initial page load performance.
