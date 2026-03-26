@@ -127,4 +127,3 @@ jobs:
           json-final-path: pr-coverage/coverage-final.json
           vite-config-path: vitest.config.ts
           comment-on: pr
-

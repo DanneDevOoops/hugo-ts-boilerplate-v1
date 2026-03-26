@@ -1,0 +1,31 @@
+name: Branch Flow Policy
+
+on:
+  pull_request:
+    branches: [ stage, main ]
+    types: [ opened, synchronize, reopened, edited ]
+
+jobs:
+  validate-merge-path:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Validate source -> target
+        env:
+          BASE: ${{ github.base_ref }} # target branch
+          HEAD: ${{ github.head_ref }} # source branch
+        run: |
+          echo "Checking merge path: ${HEAD} -> ${BASE}"
+
+          # Rule 1: only dev can merge into stage
+          if [[ "${BASE}" == "stage" && "${HEAD}" != "dev" ]]; then
+            echo "❌ Only 'dev' can merge into 'stage'."
+            exit 1
+          fi
+
+          # Rule 2: only stage can merge into main
+          if [[ "${BASE}" == "main" && "${HEAD}" != "stage" ]]; then
+            echo "❌ Only 'stage' can merge into 'main'."
+            exit 1
+          fi
+
+          echo "✅ Merge path allowed."
