@@ -27,7 +27,7 @@ Copy the example environment file and configure for your environment:
 nano .env.dev
 ```
 
-See [Environment Variables Guide](content/guidelines/ENVIRONMENT_VARIABLES.md) for detailed information.
+See [Environment Variables Guide](content/guidelines/environment-variables.md) for detailed information.
 
 ### 3. Start Development Server
 
@@ -65,7 +65,7 @@ make dev-all ENV=stage
 make dev-all ENV=prod
 ```
 
-📖 **Full documentation**: [docs/ENVIRONMENT_VARIABLES.md](content/guidelines/ENVIRONMENT_VARIABLES.md)
+📖 **Full documentation**: [docs/ENVIRONMENT_VARIABLES.md](content/guidelines/environment-variables.md)
 
 ## 🏗️ Building the Site
 
@@ -126,9 +126,9 @@ Open `docs/coverage/index.html` to view the HTML report.
 
 ## 📚 Documentation
 
-- [Environment Variables Guide](content/guidelines/ENVIRONMENT_VARIABLES.md) - Complete guide for managing environment-specific configurations
+- [Environment Variables Guide](content/guidelines/environment-variables.md) - Complete guide for managing environment-specific configurations
 - [SCSS Structure](content/guidelines/SCSS_STRUCTURE.md) - CSS/SCSS architecture documentation
-- [Setup Guides](docs/setup/) - Additional setup documentation
+- [Setup Guides](content/setup/) - Additional setup documentation
 - [Guidelines](content/guidelines/) - Development guidelines
 
 ## 📄 License
