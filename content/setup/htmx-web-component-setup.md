@@ -1,10 +1,10 @@
 ---
-title: "HTMX + Web Components Hybrid Setup"
-date: "2026-03-25T09:15:00+01:00"
+title: 'HTMX + Web Components Hybrid Setup'
+date: '2026-03-25T09:15:00+01:00'
 draft: false
-description: "Guide for combining HTMX and Web Components in a Hugo site using a hybrid architecture."
-tags: ["setup", "htmx", "web-components", "lit", "hugo"]
-categories: ["Setup"]
+description: 'Guide for combining HTMX and Web Components in a Hugo site using a hybrid architecture.'
+tags: ['setup', 'htmx', 'web-components', 'lit', 'hugo']
+categories: ['Setup']
 showDate: true
 showAuthor: false
 showReadingTime: true
@@ -16,29 +16,35 @@ Your Hugo project is now configured with a hybrid architecture combining HTMX an
 ## What's Been Configured
 
 ### 1. **HTMX Integration** ✅
+
 - HTMX 2.0.8 installed via Bun (`bun add htmx.org`)
 - Bundled in `assets/js/main.js` via `import 'htmx.org'` in `main.ts`
 - Ready for server-rendered interactions
 
 ### 2. **HTMX Bridge** ✅
+
 - Component lifecycle manager in `assets/ts/htmx-bridge.ts`
 - Automatically hydrates Web Components after HTMX swaps
 - Event listeners for `htmx:load`, `htmx:beforeSwap`, `htmx:responseError`
 
 ### 3. **Components** ✅
+
 - **HelloCard**: Simple example component (`assets/ts/components/hello-card.ts`)
 - **InteractiveCard**: Hybrid component with expand/collapse and likes (`assets/ts/components/interactive-card.ts`)
 
 ### 4. **Shortcodes** ✅
+
 - `{{</* hello-card name="World" */>}}`
 - `{{</* interactive-card title="Title" expanded="true" like-count="5" */>}}...{{</* /interactive-card */>}}`
 - `{{</* htmx-search */>}}` (requires backend)
 
 ### 5. **HTMX Fragment Partials** ✅
+
 - `layouts/partials/fragments/post-list.html` - Paginated posts
 - `layouts/partials/fragments/search-results.html` - Search results
 
 ### 6. **Documentation** ✅
+
 - `docs/guidelines/htmx-web-components-architecture.md` - Full architecture guide
 - `docs/guidelines/htmx-quick-reference.md` - Quick reference
 - `content/posts/htmx-demo.md` - Live demo page
@@ -48,11 +54,13 @@ Your Hugo project is now configured with a hybrid architecture combining HTMX an
 ### View the Demo
 
 1. Start the development server:
+
    ```bash
    bun run server
    ```
 
 2. Visit the demo page:
+
    ```
    http://localhost:1313/posts/htmx-demo/
    ```
@@ -81,11 +89,13 @@ import { LitElement, html, css } from 'lit';
 
 export class MyWidget extends LitElement {
   static properties = {
-    value: { type: String }
+    value: { type: String },
   };
 
   static styles = css`
-    :host { display: block; }
+    :host {
+      display: block;
+    }
   `;
 
   render() {
@@ -119,9 +129,7 @@ import './components/my-widget';
 
 ```html
 <!-- Trigger from page -->
-<button hx-get="/api/article/123" 
-        hx-target="#article-preview"
-        hx-swap="innerHTML">
+<button hx-get="/api/article/123" hx-target="#article-preview" hx-swap="innerHTML">
   Load Article
 </button>
 ```
@@ -166,17 +174,17 @@ import './components/my-widget';
 
 ## Responsibility Matrix
 
-| Feature Type | HTMX | Web Component | Example |
-|-------------|------|---------------|---------|
-| Pagination | ✅ | ❌ | Post list navigation |
-| Form Submit | ✅ | ❌ | Contact form |
-| Search Results | ✅ | ❌ | Dynamic search panel |
-| Date Picker | ❌ | ✅ | Calendar widget |
-| Toggle/Accordion | ❌ | ✅ | Expandable card |
-| Rich Text Editor | ❌ | ✅ | WYSIWYG input |
-| Interactive Cards | ✅ | ✅ | Swapped + local state |
-| Dynamic Forms | ✅ | ✅ | Server validation + UX |
-| Live Updates | ✅ | ✅ | Polling + animations |
+| Feature Type      | HTMX | Web Component | Example                |
+| ----------------- | ---- | ------------- | ---------------------- |
+| Pagination        | ✅   | ❌            | Post list navigation   |
+| Form Submit       | ✅   | ❌            | Contact form           |
+| Search Results    | ✅   | ❌            | Dynamic search panel   |
+| Date Picker       | ❌   | ✅            | Calendar widget        |
+| Toggle/Accordion  | ❌   | ✅            | Expandable card        |
+| Rich Text Editor  | ❌   | ✅            | WYSIWYG input          |
+| Interactive Cards | ✅   | ✅            | Swapped + local state  |
+| Dynamic Forms     | ✅   | ✅            | Server validation + UX |
+| Live Updates      | ✅   | ✅            | Polling + animations   |
 
 ## File Structure
 
@@ -217,6 +225,7 @@ hugo-ts-boilerplate-v1/
 Choose one approach:
 
 **Option A: Go Service (in-repo)**
+
 ```go
 // main.go
 package main
@@ -238,11 +247,13 @@ func main() {
 ```
 
 **Option B: Serverless Functions**
+
 - Vercel: Create `api/fragments/[name].js`
 - Netlify: Create `netlify/functions/fragments.js`
 - AWS Lambda: Create handler returning HTML
 
 **Option C: Separate Service**
+
 - Dedicated microservice for HTML fragments
 - Share Hugo templates with service
 - Deploy alongside static site
@@ -262,12 +273,13 @@ customElements.define('my-component', MyComponent);
 
 ```typescript
 // assets/ts/main.ts
-import './components/my-component';  // Add this line
+import './components/my-component'; // Add this line
 ```
 
 ### 3. Create Custom HTMX Patterns
 
 See `docs/guidelines/htmx-quick-reference.md` for recipes:
+
 - Infinite scroll
 - Live search
 - Inline editing
@@ -302,14 +314,9 @@ hugo --minify        # Hugo site
 
 ```html
 <!-- Add to any template -->
-<div id="dynamic-content">
-  {{ partial "fragments/my-fragment.html" . }}
-</div>
+<div id="dynamic-content">{{ partial "fragments/my-fragment.html" . }}</div>
 
-<button hx-get="/fragments/more" 
-        hx-target="#dynamic-content">
-  Load More
-</button>
+<button hx-get="/fragments/more" hx-target="#dynamic-content">Load More</button>
 ```
 
 ### Make component HTMX-aware
@@ -317,7 +324,7 @@ hugo --minify        # Hugo site
 ```typescript
 connectedCallback() {
   super.connectedCallback();
-  
+
   // Listen for HTMX events
   this.addEventListener('htmx:afterSwap', (e) => {
     console.log('Content swapped', e);
@@ -369,6 +376,7 @@ document.body.addEventListener('htmx:*', console.log);
 ## Support
 
 Questions? Check:
+
 1. This README
 2. Architecture documentation
 3. Quick reference guide
@@ -377,4 +385,3 @@ Questions? Check:
 ---
 
 **You're all set!** Start by viewing the demo page, then build your first hybrid feature. 🚀
-

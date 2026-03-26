@@ -1,10 +1,10 @@
 ---
-title: "Welcome to My Hugo Site! 🎉"
-date: "2026-03-07T22:38:53+01:00"
+title: 'Welcome to My Hugo Site! 🎉'
+date: '2026-03-07T22:38:53+01:00'
 draft: false
-description: "My first blog post using Hugo and the Blowfish theme."
-tags: ["hugo", "blogging", "web-development"]
-categories: ["Getting Started"]
+description: 'My first blog post using Hugo and the Blowfish theme.'
+tags: ['hugo', 'blogging', 'web-development']
+categories: ['Getting Started']
 showDate: true
 showAuthor: true
 showReadingTime: true

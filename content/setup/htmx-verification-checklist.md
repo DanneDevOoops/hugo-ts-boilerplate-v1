@@ -1,10 +1,10 @@
 ---
-title: "HTMX Bundled Setup Verification Checklist"
-date: "2026-03-25T09:10:00+01:00"
+title: 'HTMX Bundled Setup Verification Checklist'
+date: '2026-03-25T09:10:00+01:00'
 draft: false
-description: "Checklist to verify HTMX is installed, bundled, and working correctly in the Hugo project."
-tags: ["setup", "htmx", "checklist", "verification", "bun"]
-categories: ["Setup"]
+description: 'Checklist to verify HTMX is installed, bundled, and working correctly in the Hugo project.'
+tags: ['setup', 'htmx', 'checklist', 'verification', 'bun']
+categories: ['Setup']
 showDate: true
 showAuthor: false
 showReadingTime: true
@@ -16,42 +16,54 @@ showTableOfContents: true
 Use this checklist to verify your setup:
 
 ### 1. Package Dependency
+
 ```bash
 grep "htmx.org" package.json
 ```
+
 **Expected:** `"htmx.org": "^2.0.8"`
 
 ### 2. TypeScript Import
+
 ```bash
 head -3 assets/ts/main.ts
 ```
+
 **Expected:** First line is `import 'htmx.org';`
 
 ### 3. Bundle Built
+
 ```bash
 bun run build:ts
 ```
-**Expected:** 
+
+**Expected:**
+
 ```
 Bundled 11 modules
 main.js  96.29 KB  (entry point)
 ```
 
 ### 4. No CDN Script
+
 ```bash
 grep -i "unpkg\|cdn" layouts/partials/extend-head.html
 ```
+
 **Expected:** No results (or only in comments)
 
 ### 5. Runtime Test
+
 ```bash
 bun run server
 ```
+
 Open browser console at `http://localhost:1313`:
+
 ```javascript
-typeof htmx         // "object" ✅
-htmx.version        // "2.0.8" ✅
-htmx.config         // Object with config ✅
+typeof htmx; // "object" ✅
+htmx.version; // "2.0.8" ✅
+htmx.config; // Object with config ✅
 ```
 
 ## Development Commands
@@ -92,16 +104,19 @@ Gzipped: ~30-35 KB total
 ## Common Issues
 
 ### "htmx is not defined"
+
 ✅ Run `bun run build:ts`  
 ✅ Check browser console for errors  
 ✅ Verify `import 'htmx.org'` is in `main.ts`
 
 ### Bundle not updating
+
 ✅ Run `bun run build:ts` manually  
 ✅ Clear browser cache (Cmd+Shift+R)  
 ✅ Check Hugo isn't caching: `--noHTTPCache`
 
 ### Types not working
+
 ✅ Add types: `bun add -d @types/htmx.org` (if available)  
 ✅ Or use: `declare const htmx: any;` in a `.d.ts` file
 
@@ -112,11 +127,10 @@ Gzipped: ~30-35 KB total
 ✅ No CDN script in HTML  
 ✅ `htmx` object available in browser  
 ✅ HTMX attributes work (hx-get, hx-post, etc.)  
-✅ HTMX bridge initializes components on swap  
+✅ HTMX bridge initializes components on swap
 
 ---
 
 **All checks passed?** You're ready to build! 🚀
 
 See `docs/setup/HTMX-WEB-COMPONENTS-SETUP.md` for usage examples.
-

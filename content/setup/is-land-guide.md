@@ -1,10 +1,10 @@
 ---
-title: "Using @11ty/is-land for Progressive Hydration"
-date: "2026-03-25T09:20:00+01:00"
+title: 'Using @11ty/is-land for Progressive Hydration'
+date: '2026-03-25T09:20:00+01:00'
 draft: false
-description: "Guide to progressive hydration with @11ty/is-land for improved performance in interactive Hugo pages."
-tags: ["setup", "performance", "islands-architecture", "web-components", "hugo"]
-categories: ["Setup"]
+description: 'Guide to progressive hydration with @11ty/is-land for improved performance in interactive Hugo pages.'
+tags: ['setup', 'performance', 'islands-architecture', 'web-components', 'hugo']
+categories: ['Setup']
 showDate: true
 showAuthor: false
 showReadingTime: true
@@ -12,10 +12,13 @@ showTableOfContents: true
 ---
 
 ## Overview
+
 `@11ty/is-land` enables "islands architecture" - loading JavaScript components only when they're needed. This significantly improves initial page load performance.
 
 ## Installation
+
 Already installed! ✅
+
 ```bash
 bun add @11ty/is-land
 ```
@@ -34,6 +37,7 @@ import './components/interactive-card';
 ## Usage in Hugo Templates
 
 ### Basic Example: Load on Visible
+
 ```html
 <!-- Before: Component loads immediately -->
 <interactive-card title="Heavy Component">
@@ -49,6 +53,7 @@ import './components/interactive-card';
 ```
 
 ### Load on User Interaction
+
 ```html
 <!-- Load when user clicks/touches the area -->
 <is-land on:interaction>
@@ -59,6 +64,7 @@ import './components/interactive-card';
 ```
 
 ### Load on Idle
+
 ```html
 <!-- Load when browser is idle (after page load) -->
 <is-land on:idle>
@@ -69,6 +75,7 @@ import './components/interactive-card';
 ```
 
 ### Conditional Loading
+
 ```html
 <!-- Only load on desktop (save mobile bandwidth) -->
 <is-land on:visible on:media="(min-width: 768px)">
@@ -79,6 +86,7 @@ import './components/interactive-card';
 ```
 
 ### Multiple Conditions
+
 ```html
 <!-- Load when visible AND user prefers reduced motion -->
 <is-land on:visible on:media="(prefers-reduced-motion: reduce)">
@@ -91,6 +99,7 @@ import './components/interactive-card';
 ## Best Practices
 
 ### ✅ DO Use is-land for:
+
 - Components below the fold (not visible on initial load)
 - Heavy interactive components (charts, maps, video players)
 - Components with large dependencies
@@ -98,6 +107,7 @@ import './components/interactive-card';
 - Mobile-only or desktop-only components
 
 ### ❌ DON'T Use is-land for:
+
 - Critical above-the-fold content
 - Simple, lightweight components
 - Components needed for initial interactivity (e.g., main navigation)
@@ -108,19 +118,14 @@ import './components/interactive-card';
 <!-- layouts/posts/single.html -->
 <article>
   <h1>{{ .Title }}</h1>
-  <div class="content">
-    {{ .Content }}
-  </div>
-  
+  <div class="content">{{ .Content }}</div>
+
   <!-- Comments section: load when user scrolls to it -->
   <is-land on:visible>
     <interactive-card title="Comments" expanded>
       <div id="comments">
         <!-- HTMX loads comments -->
-        <div hx-get="/api/comments/{{ .Params.id }}" 
-             hx-trigger="load">
-          Loading comments...
-        </div>
+        <div hx-get="/api/comments/{{ .Params.id }}" hx-trigger="load">Loading comments...</div>
       </div>
     </interactive-card>
   </is-land>
@@ -142,6 +147,7 @@ import './components/interactive-card';
 ## Measuring Impact
 
 ### Before is-land:
+
 ```
 First Contentful Paint: 1.2s
 Time to Interactive: 2.5s
@@ -149,6 +155,7 @@ JavaScript Bundle: 45KB
 ```
 
 ### After is-land (typical improvements):
+
 ```
 First Contentful Paint: 0.8s (-33%)
 Time to Interactive: 1.5s (-40%)
@@ -161,13 +168,9 @@ JavaScript Bundle: 12KB initial, 33KB lazy-loaded
 
 ```html
 <is-land on:visible>
-  <div hx-get="/api/posts" 
-       hx-trigger="revealed"
-       hx-swap="innerHTML">
+  <div hx-get="/api/posts" hx-trigger="revealed" hx-swap="innerHTML">
     <!-- HTMX loads content when visible -->
-    <interactive-card title="Latest Posts">
-      Loading...
-    </interactive-card>
+    <interactive-card title="Latest Posts"> Loading... </interactive-card>
   </div>
 </is-land>
 ```
@@ -185,6 +188,6 @@ Add `debug` attribute to see when components load:
 This will log to the console when the component is hydrated.
 
 ## Resources
+
 - Official Docs: https://www.11ty.dev/docs/plugins/is-land/
 - GitHub: https://github.com/11ty/is-land
-

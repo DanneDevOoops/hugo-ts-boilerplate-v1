@@ -1,10 +1,10 @@
 ---
-title: "TypeScript + Bun Implementation Summary"
-date: "2026-03-25T09:35:00+01:00"
+title: 'TypeScript + Bun Implementation Summary'
+date: '2026-03-25T09:35:00+01:00'
 draft: false
-description: "Overview of what was implemented for TypeScript + Bun integration in this Hugo project."
-tags: ["setup", "summary", "typescript", "bun", "hugo"]
-categories: ["Setup"]
+description: 'Overview of what was implemented for TypeScript + Bun integration in this Hugo project.'
+tags: ['setup', 'summary', 'typescript', 'bun', 'hugo']
+categories: ['Setup']
 showDate: true
 showAuthor: false
 showReadingTime: true
@@ -125,6 +125,7 @@ hugo-site/
 5. **Deploy**: Include `assets/js/` in production
 
 ### Build Command Breakdown
+
 ```bash
 bun build ./src/ts/main.ts --outdir ./assets/js --target browser --minify
 ```
@@ -141,6 +142,7 @@ bun build ./src/ts/main.ts --outdir ./assets/js --target browser --minify
 ### 1. Add Your First TypeScript Feature
 
 Create `src/ts/features/my-feature.ts`:
+
 ```typescript
 export function myFeature(): void {
   console.log('Hello from TypeScript!');
@@ -148,12 +150,14 @@ export function myFeature(): void {
 ```
 
 Import in `src/ts/main.ts`:
+
 ```typescript
 import { myFeature } from './features/my-feature';
 myFeature();
 ```
 
 Rebuild:
+
 ```bash
 bun run build:ts
 ```
@@ -161,6 +165,7 @@ bun run build:ts
 ### 2. Include in Hugo Template
 
 Add to `layouts/baseof.html`:
+
 ```html
 <script src="{{ "js/main.js" | relURL }}" defer></script>
 ```
@@ -191,12 +196,12 @@ bun run server
 
 ## 🐛 Troubleshooting
 
-| Issue | Solution |
-|-------|----------|
-| "bun: command not found" | Install Bun: `curl -fsSL https://bun.sh/install \| bash` |
-| "Module not found" | Check file path and make sure function is exported |
-| "Changes not seen" | Hard refresh browser (Cmd+Shift+R) and rebuild (`bun run build:ts`) |
-| "Package not installed" | Run `bun install package-name` |
+| Issue                    | Solution                                                            |
+| ------------------------ | ------------------------------------------------------------------- |
+| "bun: command not found" | Install Bun: `curl -fsSL https://bun.sh/install \| bash`            |
+| "Module not found"       | Check file path and make sure function is exported                  |
+| "Changes not seen"       | Hard refresh browser (Cmd+Shift+R) and rebuild (`bun run build:ts`) |
+| "Package not installed"  | Run `bun install package-name`                                      |
 
 ---
 
@@ -212,17 +217,20 @@ bun run server
 ## ⚙️ Configuration Details
 
 ### TypeScript (`tsconfig.json`)
+
 - **Target**: ES2020 (modern browsers)
 - **Module**: ESNext (for bundler)
 - **Strict**: All strict checks enabled
 - **JSX**: React JSX support (optional)
 
 ### Bun (`bunfig.toml`)
+
 - **Minify**: Enabled (smaller file size)
 - **Sourcemap**: External (separate .map files)
 - **Target**: Browser
 
 ### Hugo Integration
+
 - Compiled JS goes in `assets/js/`
 - Reference with `{{ "js/main.js" | relURL }}`
 - Use `defer` attribute for better performance
@@ -249,4 +257,3 @@ bun run server
 ---
 
 **You're all set!** Start building with TypeScript and Bun. Happy coding! 🎉
-

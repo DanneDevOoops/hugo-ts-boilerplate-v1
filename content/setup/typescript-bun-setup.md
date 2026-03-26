@@ -1,10 +1,10 @@
 ---
-title: "TypeScript + Bun Setup for Hugo"
-date: "2026-03-25T09:40:00+01:00"
+title: 'TypeScript + Bun Setup for Hugo'
+date: '2026-03-25T09:40:00+01:00'
 draft: false
-description: "Comprehensive guide to configuring TypeScript and Bun as the JavaScript toolchain for Hugo."
-tags: ["setup", "typescript", "bun", "hugo", "tooling"]
-categories: ["Setup"]
+description: 'Comprehensive guide to configuring TypeScript and Bun as the JavaScript toolchain for Hugo.'
+tags: ['setup', 'typescript', 'bun', 'hugo', 'tooling']
+categories: ['Setup']
 showDate: true
 showAuthor: false
 showReadingTime: true
@@ -31,6 +31,7 @@ hugo-site/
 ## 🚀 Getting Started
 
 ### Prerequisites
+
 - Install **Bun**: https://bun.sh
   ```bash
   curl -fsSL https://bun.sh/install | bash
@@ -39,21 +40,25 @@ hugo-site/
 ### Installation
 
 1. Install dependencies:
+
    ```bash
    bun install
    ```
 
 2. Build TypeScript:
+
    ```bash
    bun run build:ts
    ```
 
 3. Watch mode for development:
+
    ```bash
    bun run dev
    ```
 
 4. Start Hugo server:
+
    ```bash
    bun run server
    ```
@@ -65,17 +70,18 @@ hugo-site/
 
 ## 🛠️ Available Scripts
 
-| Script | Description |
-|--------|-------------|
-| `bun run dev` | Watch TypeScript files and rebuild on changes |
-| `bun run build:ts` | Build TypeScript to bundled JavaScript |
-| `bun run build:all` | Build TypeScript and Hugo site |
-| `bun run server` | Start Hugo dev server |
-| `bun run server:docker` | Start Hugo with Docker Compose |
+| Script                  | Description                                   |
+| ----------------------- | --------------------------------------------- |
+| `bun run dev`           | Watch TypeScript files and rebuild on changes |
+| `bun run build:ts`      | Build TypeScript to bundled JavaScript        |
+| `bun run build:all`     | Build TypeScript and Hugo site                |
+| `bun run server`        | Start Hugo dev server                         |
+| `bun run server:docker` | Start Hugo with Docker Compose                |
 
 ## 📝 Writing TypeScript
 
 ### Main Entry Point (`src/ts/main.ts`)
+
 This is your primary entry point. Import and use other modules here:
 
 ```typescript
@@ -85,6 +91,7 @@ console.log('My Hugo site with TypeScript!');
 ```
 
 ### Creating New Modules
+
 Create TypeScript files in `src/ts/` directory:
 
 ```typescript
@@ -95,6 +102,7 @@ export function initializeSearch(): void {
 ```
 
 Import in `main.ts`:
+
 ```typescript
 import { initializeSearch } from './features/search';
 initializeSearch();
@@ -103,12 +111,14 @@ initializeSearch();
 ## 🔧 Configuration
 
 ### TypeScript Config (`tsconfig.json`)
+
 - **Target**: ES2020
 - **Module**: ESNext
 - **Strict Mode**: Enabled
 - **Source Map**: Enabled for debugging
 
 ### Build Config (`bunfig.toml`)
+
 Optional: Create `bunfig.toml` for custom Bun settings:
 
 ```toml
@@ -120,12 +130,14 @@ sourcemap = "external"
 ## 📦 Bun vs npm
 
 **Why Bun?**
+
 - ⚡ **Faster**: 20-100x faster than npm for package management and bundling
 - 🚀 **Built-in Bundler**: No need for separate webpack/esbuild configuration
 - 📦 **Simpler**: One tool for package management and bundling
 - 🔄 **Hot Reload**: Native hot reload support
 
 **Key Bun Commands**:
+
 - `bun install` - Install dependencies (replaces `npm install`)
 - `bun add <package>` - Add dependency (replaces `npm install <package>`)
 - `bun remove <package>` - Remove dependency
@@ -135,12 +147,14 @@ sourcemap = "external"
 ## 📚 Using Bun with Hugo
 
 The build process:
+
 1. **Source**: `src/ts/**/*.ts` → TypeScript files
 2. **Compile**: Bun bundles TypeScript to JavaScript
 3. **Output**: `assets/js/main.js` → Hugo asset pipeline
 4. **Include in Hugo**: Reference compiled JS in your layouts
 
 Example in Hugo template (`layouts/baseof.html`):
+
 ```html
 <script src="{{ "js/main.js" | relURL }}"></script>
 ```
@@ -148,6 +162,7 @@ Example in Hugo template (`layouts/baseof.html`):
 ## 🔍 Debugging
 
 With source maps enabled, you can debug TypeScript directly in browser DevTools:
+
 1. Check the "Sources" tab in Chrome DevTools
 2. You'll see original `.ts` files instead of compiled `.js`
 
@@ -168,4 +183,3 @@ With source maps enabled, you can debug TypeScript directly in browser DevTools:
 6. Reference the built JS in your Hugo layouts
 
 Happy coding! 🎉
-

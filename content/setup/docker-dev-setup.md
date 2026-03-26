@@ -1,10 +1,10 @@
 ---
-title: "🐳 Docker Development Setup with Live TypeScript Reload"
-date: "2026-03-25T09:00:00+01:00"
+title: '🐳 Docker Development Setup with Live TypeScript Reload'
+date: '2026-03-25T09:00:00+01:00'
 draft: false
-description: "Set up a Docker-based Hugo development workflow with Bun TypeScript watch mode and live reload."
-tags: ["setup", "docker", "hugo", "typescript", "bun"]
-categories: ["Setup"]
+description: 'Set up a Docker-based Hugo development workflow with Bun TypeScript watch mode and live reload.'
+tags: ['setup', 'docker', 'hugo', 'typescript', 'bun']
+categories: ['Setup']
 showDate: true
 showAuthor: false
 showReadingTime: true
@@ -30,6 +30,7 @@ make server-docker
 ```
 
 That's it! The container will:
+
 1. ✅ Install dependencies (if needed)
 2. ✅ Build TypeScript initially
 3. ✅ Start Bun in watch mode (auto-rebuilds TypeScript on changes)
@@ -81,6 +82,7 @@ docker compose up --build hugo-dev
 ```
 
 Watch the logs - you'll see:
+
 - 📦 Dependency installation (first time only)
 - 📦 Initial TypeScript build
 - 🚀 Bun watch started
@@ -108,6 +110,7 @@ Press `Ctrl+C` in the terminal - both processes will shut down gracefully.
 ## Testing the Setup
 
 1. Start the container:
+
    ```bash
    docker compose up --build hugo-dev
    ```
@@ -115,6 +118,7 @@ Press `Ctrl+C` in the terminal - both processes will shut down gracefully.
 2. Open browser to `http://localhost:1313`
 
 3. Edit `assets/ts/components/hello-card.ts`:
+
    ```typescript
    // Change the greeting
    <h3>Hello from Docker! 🐳, ${this.name} 👋</h3>
@@ -129,20 +133,24 @@ Press `Ctrl+C` in the terminal - both processes will shut down gracefully.
 ## Troubleshooting
 
 ### Container won't start
+
 - Check if port 1313 is already in use: `lsof -i :1313`
 - Stop any local Hugo server running
 - Rebuild: `docker compose up --build hugo-dev`
 
 ### TypeScript changes not detected
+
 - Check container logs: `docker compose logs -f hugo-dev`
 - Verify Bun watch is running (you should see "Bun watch started")
 - Make sure volumes are mounted correctly
 
 ### Dependencies not installing
+
 - Remove node_modules: `rm -rf node_modules`
 - Rebuild container: `docker compose up --build hugo-dev`
 
 ### Clean restart
+
 ```bash
 docker compose down
 docker compose up --build hugo-dev
@@ -167,9 +175,11 @@ This builds the optimized static site in `public/` without watch mode.
 ## Comparison: Docker vs. Local Development
 
 ### Docker Development (New Setup)
+
 ```bash
 docker compose up --build hugo-dev
 ```
+
 - ✅ Consistent environment across machines
 - ✅ No need to install Hugo/Bun locally
 - ✅ Isolated dependencies
@@ -177,9 +187,11 @@ docker compose up --build hugo-dev
 - ⚠️ Slightly slower initial build
 
 ### Local Development
+
 ```bash
 make dev-all
 ```
+
 - ✅ Faster startup
 - ✅ Native performance
 - ✅ Easier debugging
@@ -190,22 +202,26 @@ Both approaches now support full live reload for TypeScript and Hugo content!
 ## Advanced: Custom Docker Commands
 
 ### View logs only
+
 ```bash
 docker compose logs -f hugo-dev
 ```
 
 ### Rebuild without cache
+
 ```bash
 docker compose build --no-cache hugo-dev
 docker compose up hugo-dev
 ```
 
 ### Run bash inside container
+
 ```bash
 docker compose run --rm hugo-dev /bin/sh
 ```
 
 ### Check Bun version in container
+
 ```bash
 docker compose run --rm hugo-dev bun --version
 ```
@@ -225,4 +241,3 @@ docker compose run --rm hugo-dev bun --version
 - Press `Ctrl+C` to stop when done
 
 Happy coding! 🚀
-

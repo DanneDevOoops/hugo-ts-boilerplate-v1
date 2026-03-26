@@ -1,10 +1,10 @@
 ---
-title: "Quick Start: TypeScript + Bun for Hugo"
-date: "2026-03-25T09:25:00+01:00"
+title: 'Quick Start: TypeScript + Bun for Hugo'
+date: '2026-03-25T09:25:00+01:00'
 draft: false
-description: "Fast 5-minute setup for TypeScript and Bun in a Hugo project."
-tags: ["setup", "quickstart", "typescript", "bun", "hugo"]
-categories: ["Setup"]
+description: 'Fast 5-minute setup for TypeScript and Bun in a Hugo project.'
+tags: ['setup', 'quickstart', 'typescript', 'bun', 'hugo']
+categories: ['Setup']
 showDate: true
 showAuthor: false
 showReadingTime: true
@@ -24,6 +24,7 @@ curl -fsSL https://bun.sh/install | bash
 ```
 
 Verify installation:
+
 ```bash
 bun --version
 ```
@@ -54,6 +55,7 @@ In your `layouts/baseof.html` or similar:
 ### 5. Start Developing
 
 **Option 1: Watch TypeScript + Hugo Server**
+
 ```bash
 # Terminal 1: Watch TypeScript
 bun run dev
@@ -63,6 +65,7 @@ bun run server
 ```
 
 **Option 2: Docker (if you prefer)**
+
 ```bash
 bun run server:docker
 ```
@@ -196,7 +199,7 @@ if (document.readyState === 'loading') {
 <button data-copy="https://example.com">Copy</button>
 
 <!-- Make it pretty with Tailwind CSS -->
-<button 
+<button
   data-copy="https://example.com"
   class="px-3 py-1 bg-blue-500 text-white rounded hover:bg-blue-600"
 >
@@ -216,12 +219,15 @@ Visit your site and click the button!
 ## 🐛 Debugging
 
 ### Source Maps
+
 Source maps are enabled. In Chrome DevTools:
+
 1. Open **Sources** tab
 2. Find your `.ts` files under `webpack://`
 3. Set breakpoints and debug as TypeScript
 
 ### Console Logs
+
 ```typescript
 // Works just like JavaScript
 console.log('Debugging message');
@@ -246,20 +252,25 @@ const results = fuse.search(query);
 ## ⚠️ Troubleshooting
 
 ### "bun: command not found"
+
 Install Bun: `curl -fsSL https://bun.sh/install | bash`
 
 ### "Module not found"
+
 Make sure you're:
+
 1. Using correct file paths
 2. Exporting from the source file
 3. Running `bun install` for external packages
 
 ### "Changes not reflected in browser"
+
 1. Hard refresh: `Cmd+Shift+R` (or `Ctrl+Shift+R`)
 2. Clear browser cache
 3. Make sure you ran `bun run build:ts`
 
 ### "assets/js/ directory doesn't exist"
+
 Run: `mkdir -p assets/js`
 
 ## 📚 Learn More
@@ -281,4 +292,3 @@ Run: `mkdir -p assets/js`
 ---
 
 **Questions?** Check `TYPESCRIPT_BUN_SETUP.md` for detailed documentation.
-

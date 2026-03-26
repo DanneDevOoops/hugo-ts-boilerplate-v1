@@ -1,10 +1,10 @@
 ---
-title: "TypeScript + Bun Setup Checklist"
-date: "2026-03-25T09:30:00+01:00"
+title: 'TypeScript + Bun Setup Checklist'
+date: '2026-03-25T09:30:00+01:00'
 draft: false
-description: "Step-by-step checklist for installing and validating TypeScript + Bun in Hugo."
-tags: ["setup", "checklist", "typescript", "bun", "hugo"]
-categories: ["Setup"]
+description: 'Step-by-step checklist for installing and validating TypeScript + Bun in Hugo.'
+tags: ['setup', 'checklist', 'typescript', 'bun', 'hugo']
+categories: ['Setup']
 showDate: true
 showAuthor: false
 showReadingTime: true
@@ -29,6 +29,7 @@ curl -fsSL https://bun.sh/install | bash
 ```
 
 Verify:
+
 ```bash
 bun --version
 # Should output: bun x.y.z
@@ -46,11 +47,13 @@ bun install
 ```
 
 Expected output:
+
 ```
 + [package count] packages installed
 ```
 
 Creates:
+
 - `node_modules/` directory
 - `bun.lockb` lock file
 
@@ -63,11 +66,13 @@ bun run build:ts
 ```
 
 Expected output:
+
 ```
 ./src/ts/main.ts   [bundled]
 ```
 
 Creates:
+
 - `assets/js/main.js` (bundled code)
 - `assets/js/main.js.map` (source maps)
 
@@ -122,7 +127,7 @@ Open DevTools (F12) → Console
 bun run dev
 
 # Should output:
-# $ bun build ./src/ts/main.ts ... 
+# $ bun build ./src/ts/main.ts ...
 # watch: src/ts/ recompiling...
 ```
 
@@ -211,6 +216,7 @@ bun run build:ts
 Open DevTools (F12) → Console tab
 
 You should see:
+
 ```
 Hugo site loaded with TypeScript via Bun!
 ```
@@ -222,6 +228,7 @@ No red errors (warnings are OK)
 ### File Size Check
 
 Check generated file:
+
 ```bash
 ls -lh assets/js/main.js
 # Should be < 10KB for basic setup
@@ -362,4 +369,3 @@ When you've completed all steps above, you're ready to:
 **Questions?** Reference the documentation files or check Bun/TypeScript official docs.
 
 **Note:** This checklist assumes macOS/Linux. WSL and Windows users should work fine too.
-
