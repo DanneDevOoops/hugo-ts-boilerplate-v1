@@ -1,6 +1,5 @@
 import { css, html, CSSResult, LitElement } from 'lit';
 
-
 /**
  * Interactive Card - A hybrid Web Component
  *
@@ -146,7 +145,7 @@ export class InteractiveCard extends LitElement {
         detail: { title: this.title, expanded: this.expanded },
         bubbles: true,
         composed: true,
-      })
+      }),
     );
   }
 
@@ -159,11 +158,11 @@ export class InteractiveCard extends LitElement {
         detail: {
           title: this.title,
           liked: this.liked,
-          likeCount: this.likeCount
+          likeCount: this.likeCount,
         },
         bubbles: true,
         composed: true,
-      })
+      }),
     );
   }
 
@@ -173,17 +172,19 @@ export class InteractiveCard extends LitElement {
         <div class="header">
           <h3 class="title">${this.title}</h3>
           <div class="actions">
-            <button 
+            <button
               class="like-btn ${this.liked ? 'liked' : ''}"
               @click=${this.toggleLike}
-              aria-label="${this.liked ? 'Unlike' : 'Like'}">
+              aria-label="${this.liked ? 'Unlike' : 'Like'}"
+            >
               ${this.liked ? '❤️' : '🤍'}
               ${this.likeCount > 0 ? html`<span class="like-count">${this.likeCount}</span>` : ''}
             </button>
-            <button 
+            <button
               @click=${this.toggleExpanded}
               aria-label="${this.expanded ? 'Collapse' : 'Expand'}"
-              aria-expanded="${this.expanded}">
+              aria-expanded="${this.expanded}"
+            >
               <span class="expand-icon">${this.expanded ? '▲' : '▼'}</span>
             </button>
           </div>
@@ -197,4 +198,3 @@ export class InteractiveCard extends LitElement {
 }
 
 customElements.define('interactive-card', InteractiveCard);
-

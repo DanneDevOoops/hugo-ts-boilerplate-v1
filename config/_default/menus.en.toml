@@ -1,100 +1,164 @@
-# -- Main Menu --
-# The main menu is displayed in the header at the top of the page.
-# Acceptable parameters are name, pageRef, page, url, title, weight.
-# 
-# The simplest menu configuration is to provide:
-#   name = The name to be displayed for this menu link
-#   pageRef = The identifier of the page or section to link to
-#
-# By default the menu is ordered alphabetically. This can be
-# overridden by providing a weight value. The menu will then be
-# ordered by weight from lowest to highest.
-
-
+# --- POST MENU ITEMS ---
 
 [[main]]
-  name = "Posts"
-  pageRef = "posts"
-  weight = 20
+name = "Posts"
+pageRef = "posts"
+weight = 100
+
+# --- END POST MENU ---
+
+
+
+# --- GUIDELINES MENU ---
 
 [[main]]
-  name = "Projects"
-  pageRef = "projects"
-  weight = 20
-
-# Have subordered menu items like this:
-# 1. parent key is the name of the parent menu item
-# 2. pageRef is the identifier of the page or section to link to
-# 3. the weight value is optional but it orders the menu items
+name = "Template Guidelines"
+pageRef = "guidelines"
+weight = 200
 
 [[main]]
- name = "An interesting topic"
- parent = "Posts"
- pageRef = "posts/interesting-topic"
- weight =21
+name = "Architecture overview"
+parent = "Guidelines"
+pageRef = "guidelines/architecture-overview"
+weight = 201
 
- [[main]]
-  name = "An interesting topic 2"
-  parent = "Posts"
-  pageRef = "posts/interesting-topic"
-  weight =22
+[[main]]
+name = "Backend API setup"
+parent = "Guidelines"
+pageRef = "guidelines/backend-api-setup"
+weight = 202
+
+[[main]]
+name = "Blowfish Theme Guide"
+parent = "Guidelines"
+pageRef = "guidelines/blowfish-theme-guide"
+weight = 203
+
+[[main]]
+name = "Environment Configuration"
+parent = "Guidelines"
+pageRef = "guidelines/environment-configuration"
+weight = 204
+
+[[main]]
+name = "Environment Quick Reference"
+parent = "Guidelines"
+pageRef = "guidelines/environment-quick-reference"
+weight = 205
+
+[[main]]
+name = "Environment Variables"
+parent = "Guidelines"
+pageRef = "guidelines/environment-varaibles"
+weight = 206
+
+[[main]]
+name = "ESLint & Prettier Guide"
+parent = "Guidelines"
+pageRef = "guidelines/eslint-prettier-guide"
+weight = 207
+
+[[main]]
+name = "Fast Build Guide"
+parent = "Guidelines"
+pageRef = "guidelines/fast-build-guide"
+weight = 208
+
+[[main]]
+name = "HTMX Bundled vs CDN"
+parent = "Guidelines"
+pageRef = "guidelines/htmx-bundled-vs-cdn"
+weight = 209
+
+[[main]]
+name = "HTMX Quick Reference"
+parent = "Guidelines"
+pageRef = "guidelines/htmx-quick-reference"
+weight = 210
+
+[[main]]
+name = "HTMX Web Components Architecture"
+parent = "Guidelines"
+pageRef = "guidelines/htmx-web-components-architecture"
+weight = 211
+
+[[main]]
+name = "Quick Start New Tools"
+parent = "Guidelines"
+pageRef = "guidelines/quick-start-new-tools"
+weight = 212
+
+[[main]]
+name = "Recommended Tools"
+parent = "Guidelines"
+pageRef = "guidelines/recommended-tools"
+weight = 213
+
+[[main]]
+name = "SCSS Best Practices"
+parent = "Guidelines"
+pageRef = "guidelines/scss-best-practices"
+weight = 214
+
+[[main]]
+name = "State Management Implementation"
+parent = "Guidelines"
+pageRef = "guidelines/state-management-implementation"
+weight = 215
+
+[[main]]
+name = "State Management Guide"
+parent = "Guidelines"
+pageRef = "guidelines/state-management-guide"
+weight = 216
+
+# --- END GUIDELINES MENU ---
+
+
+
+# --- PROJECTS MENU ITEMS ---
+
+[[main]]
+name = "Projects"
+pageRef = "projects"
+weight = 20
+
+[[main]]
+name = "An interesting topic"
+parent = "Posts"
+pageRef = "posts/interesting-topic"
+weight = 21
+
+[[main]]
+name = "An interesting topic 2"
+parent = "Posts"
+pageRef = "posts/interesting-topic"
+weight = 22
+
+# --- END PROJECTS MENU ---
+
+
+
+# --- ABOUT MENU ITEMS ---
+
+[[main]]
+name = "About"
+pageRef = "about"
+weight = 30
+
+# --- END ABOUT MENU ---
+
+
+
+# --- END OTHER MENU ITEMS ---
+
+
+
+# --- SUBNAVIGATION EXAMPLE ---
 
 [[subnavigation]]
-  name = "Sub ordrered menu item"
-  pageRef = "posts/welcome"
+name = "Sub ordrered menu item"
+pageRef = "posts/welcome"
 
-[[main]]
-  name = "About"
-  pageRef = "about"
-  weight = 30
-
-#[[main]]
-#  name = "example sub-menu 1"
-#  parent = "Parent"
-#  pageRef = "posts"
-#  weight = 20
-
-#[[main]]
-#  name = "example sub-menu 2"
-#  parent = "Parent"
-#  pageRef = "posts"
-#  weight = 20
-
-#[[subnavigation]]
-#  name = "An interesting topic"
-#  pageRef = "tags/interesting-topic"
-#  weight = 10
-
-#[[subnavigation]]
-#  name = "My Awesome Category"
-#  pre = "github"
-#  pageRef = "categories/awesome"
-#  weight = 20
-
-#[[main]]
-#  name = "Categories"
-#  pageRef = "categories"
-#  weight = 20
-
-#[[main]]
-#  name = "Tags"
-#  pageRef = "tags"
-#  weight = 30
-
-
-# -- Footer Menu --
-# The footer menu is displayed at the bottom of the page, just before
-# the copyright notice. Configure as per the main menu above.
-
-
-
-
-# [[footer]]
-#   name = "Tags"
-#   pageRef = "tags"
-#   weight = 10
-
-# [[footer]]
-#   name = "Categories"
-#   pageRef = "categories"
-#   weight = 20
+[[footer]]
+none = "none"

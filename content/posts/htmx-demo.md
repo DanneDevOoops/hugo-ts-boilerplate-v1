@@ -1,9 +1,14 @@
 ---
-title: "HTMX + Web Components Demo"
-date: 2026-03-10
+title: 'HTMX + Web Components Demo'
+date: '2026-03-10T10:00:00+01:00'
 draft: false
-description: "Interactive demonstration of HTMX and Web Components working together"
-tags: ["demo", "htmx", "web-components"]
+description: 'Interactive demonstration of HTMX and Web Components working together.'
+tags: ['demo', 'htmx', 'web-components', 'hugo']
+categories: ['Development']
+showDate: true
+showAuthor: true
+showReadingTime: true
+showTableOfContents: true
 ---
 
 # HTMX + Web Components Hybrid Demo
@@ -24,21 +29,23 @@ These cards use Web Components for local UI state (expanded/collapsed, likes) wh
 HTMX gives you access to AJAX, CSS Transitions, WebSockets and Server Sent Events directly in HTML, using attributes, so you can build modern user interfaces with the simplicity and power of hypertext.
 
 **Key Features:**
+
 - Minimal JavaScript required
 - Progressive enhancement
 - Works with any backend
 - Small file size (~14KB gzipped)
-{{< /interactive-card >}}
+  {{< /interactive-card >}}
 
 {{< interactive-card title="Web Components Overview" like-count="8" >}}
 Web Components are a suite of different technologies allowing you to create reusable custom elements with their functionality encapsulated away from the rest of your code.
 
 **Benefits:**
+
 - Framework-agnostic
 - Shadow DOM isolation
 - Native browser support
 - Composable and reusable
-{{< /interactive-card >}}
+  {{< /interactive-card >}}
 
 {{< interactive-card title="Why Combine Both?" like-count="23" >}}
 HTMX is excellent for **server-rendered interactions** (fetch/swap fragments). Web Components are excellent for **reusable interactive widgets** (encapsulated behavior/styling).
@@ -46,10 +53,11 @@ HTMX is excellent for **server-rendered interactions** (fetch/swap fragments). W
 Together, you get **SPA-like UX** without committing to a full SPA framework!
 
 **Use this split:**
+
 - **HTMX owns:** navigation, forms, lists, pagination, server truth
 - **Web Components own:** date pickers, toggles, media widgets, micro-interactions
 - **Hybrid pattern:** HTMX swaps HTML containing components that hydrate automatically
-{{< /interactive-card >}}
+  {{< /interactive-card >}}
 
 ## Example 3: HTMX Search (Coming Soon)
 
@@ -73,11 +81,13 @@ document.body.addEventListener('htmx:load', (event) => {
 });
 
 // When you interact with a card:
-card.dispatchEvent(new CustomEvent('card-liked', {
-  detail: { liked: true, likeCount: 42 },
-  bubbles: true,
-  composed: true
-}));
+card.dispatchEvent(
+  new CustomEvent('card-liked', {
+    detail: { liked: true, likeCount: 42 },
+    bubbles: true,
+    composed: true,
+  }),
+);
 ```
 
 ## Architecture Benefits
@@ -86,7 +96,7 @@ card.dispatchEvent(new CustomEvent('card-liked', {
 ✅ **Minimal Bundle Size** - Only load what you need  
 ✅ **Server Truth** - Data lives on the server, not duplicated client-side  
 ✅ **Component Reusability** - Use components anywhere, with or without HTMX  
-✅ **Simple Mental Model** - Clear separation of concerns  
+✅ **Simple Mental Model** - Clear separation of concerns
 
 ## Next Steps
 
@@ -98,4 +108,3 @@ card.dispatchEvent(new CustomEvent('card-liked', {
 ---
 
 **Note:** For HTMX features to work with dynamic server data, you'll need backend endpoints that return HTML fragments. See the architecture guide for implementation options.
-
