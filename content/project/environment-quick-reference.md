@@ -8,7 +8,7 @@ description: 'Quick lookup guide for development, staging, and production enviro
 slug: 'environment-quick-reference'
 
 tags:
-  - 'guidelines'
+  - 'project'
   - 'environment'
   - 'quick-reference'
   - 'configuration'

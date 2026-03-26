@@ -8,7 +8,7 @@ description: 'Best practices for managing frontend state with API-backed data, c
 slug: 'state-management-guide'
 
 tags:
-  - 'guidelines'
+  - 'project'
   - 'state-management'
   - 'frontend'
   - 'backend'

@@ -8,7 +8,7 @@ This is where all your markdown content lives for your Hugo site.
 
 ```bash
 # Blog post
-hugo new posts/my-post-name.md
+hugo new tools/my-post-name.md
 
 # Page
 hugo new about.md

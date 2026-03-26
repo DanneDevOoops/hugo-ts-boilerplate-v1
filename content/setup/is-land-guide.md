@@ -115,7 +115,7 @@ import './components/interactive-card';
 ## Example: Blog Post with Comments
 
 ```html
-<!-- layouts/posts/single.html -->
+<!-- layouts/tools/single.html -->
 <article>
   <h1>{{ .Title }}</h1>
   <div class="content">{{ .Content }}</div>

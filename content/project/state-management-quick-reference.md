@@ -8,7 +8,7 @@ description: 'Quick reference for state management files, commands, integration 
 slug: 'state-management-quick-reference'
 
 tags:
-  - 'guidelines'
+  - 'project'
   - 'state-management'
   - 'quick-reference'
   - 'typescript'

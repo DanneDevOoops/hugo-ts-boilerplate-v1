@@ -8,7 +8,7 @@ description: 'Quick reference for HTMX attributes, events, integration patterns,
 slug: 'htmx-quick-reference'
 
 tags:
-  - 'guidelines'
+  - 'project'
   - 'htmx'
   - 'web-components'
   - 'quick-reference'

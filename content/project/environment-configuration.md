@@ -8,7 +8,7 @@ description: 'Reference guide for configuring frontend and backend environment v
 slug: 'environment-configuration'
 
 tags:
-  - 'guidelines'
+  - 'project'
   - 'environment'
   - 'configuration'
   - 'vite'

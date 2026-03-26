@@ -8,7 +8,7 @@ description: 'Workflow diagrams for TypeScript and Bun build processes, developm
 slug: 'workflow-diagrams'
 
 tags:
-  - 'guidelines'
+  - 'project'
   - 'workflow'
   - 'diagrams'
   - 'typescript'

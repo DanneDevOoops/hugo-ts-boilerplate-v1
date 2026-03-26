@@ -8,7 +8,7 @@ description: 'Complete guide to managing environment-specific variables, .env fi
 slug: 'environment-variables'
 
 tags:
-  - 'guidelines'
+  - 'project'
   - 'environment'
   - 'variables'
   - 'configuration'
