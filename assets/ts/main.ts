@@ -9,7 +9,9 @@ import { setupHTMXBridge, initializeComponents } from './htmx-bridge';
 
 console.log('Hugo site loaded with TypeScript via Bun!');
 
-// Example: Dark mode toggle
+/**
+ * Applies the persisted dark-mode preference to the root document element.
+ */
 function initializeDarkMode(): void {
   const isDark = localStorage.getItem('darkMode') === 'true';
   if (isDark) {
@@ -17,7 +19,9 @@ function initializeDarkMode(): void {
   }
 }
 
-// Example: Smooth scroll
+/**
+ * Enables smooth scrolling for in-page anchor navigation.
+ */
 function initializeSmoothScroll(): void {
   document.documentElement.style.scrollBehavior = 'smooth';
 }

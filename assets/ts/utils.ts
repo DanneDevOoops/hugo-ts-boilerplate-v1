@@ -1,4 +1,6 @@
-// Utility module - Example of organizing TypeScript code
+/**
+ * Shared browser utility helpers used across the site's TypeScript modules.
+ */
 export const Utilities = {
   /**
    * Debounce a function

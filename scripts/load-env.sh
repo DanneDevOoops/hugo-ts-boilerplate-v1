@@ -46,4 +46,3 @@ export BASE_URL="${HUGO_BASE_URL}"
 set +a  # Stop automatically exporting
 
 echo "✅ Environment loaded: $HUGO_ENVIRONMENT"
-

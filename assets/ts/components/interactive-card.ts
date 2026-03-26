@@ -1,4 +1,5 @@
 import { css, html, CSSResult, LitElement } from 'lit';
+import { applyTailwindToShadowRoot } from '../utils/tailwind-mixin';
 
 /**
  * Interactive Card - A hybrid Web Component
@@ -9,12 +10,15 @@ import { css, html, CSSResult, LitElement } from 'lit';
  * - Maintains local UI state (expanded/collapsed)
  * - Emits events for parent page to consume
  *
+ * {@link LitElement}
+ *
  * Example usage:
  * <interactive-card title="Article Title" expanded>
  *   <p>Article content goes here...</p>
  * </interactive-card>
  */
 export class InteractiveCard extends LitElement {
+  /** @internal */
   static properties = {
     title: { type: String },
     expanded: { type: Boolean, reflect: true },
@@ -22,16 +26,26 @@ export class InteractiveCard extends LitElement {
     likeCount: { type: Number, attribute: 'like-count' },
   };
 
+  /** @internal */
   static shadowRootOptions = {
     ...LitElement.shadowRootOptions,
     delegatesFocus: true,
   };
 
+  /** Heading text shown in the card header. @defaultValue `'Card Title'` */
   declare title: string;
+
+  /** Whether the card content is expanded. Reflected to the `expanded` attribute. @defaultValue `false` */
   declare expanded: boolean;
+
+  /** Whether the current user has liked the card. Reflected to the `liked` attribute. @defaultValue `false` */
   declare liked: boolean;
+
+  /** Number of likes shown beside the like button. Mapped to the `like-count` attribute. @defaultValue `0` */
   declare likeCount: number;
 
+  /** Component-scoped CSS styles. */
+  /** @internal */
   static styles: CSSResult = css`
     :host {
       display: block;
@@ -127,11 +141,14 @@ export class InteractiveCard extends LitElement {
     this.likeCount = 0;
   }
 
+  /** @internal */
   connectedCallback(): void {
     super.connectedCallback();
+    void applyTailwindToShadowRoot(this);
     console.debug('[interactive-card] Mounted', { title: this.title, expanded: this.expanded });
   }
 
+  /** @internal */
   disconnectedCallback(): void {
     super.disconnectedCallback();
     console.debug('[interactive-card] Unmounted', { title: this.title });
@@ -166,6 +183,7 @@ export class InteractiveCard extends LitElement {
     );
   }
 
+  /** @internal */
   render() {
     return html`
       <div class="card">

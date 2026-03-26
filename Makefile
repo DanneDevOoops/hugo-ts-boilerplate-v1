@@ -1,8 +1,8 @@
 .PHONY: help install dev dev-all build build-all build-fast build-hugo server server-docker server-docker-staging build-docker-production lint lint-fix format format-ts format-css format-html format-md format-check format-check-ts format-check-css format-check-html format-check-md clean clean-lock-files clean-docs clean-js-build clean-vendor docs docs-watch hugo-mod-graph hugo-mod-vendor hugo-mod-get hugo-mod-get-update hugo-mod-tidy hugo-mod-clean hugo-mod-verify hugo-mod-init
 
 LOCK_FILES := bun.lock package-lock.json yarn.lock pnpm-lock.yaml .hugo_build.lock
-CLEAN_DOC_PATHS := docs/coverage docs/typedoc
-CLEAN_BUILD_PATHS := dist public node_modules
+CLEAN_DOC_PATHS := docs/coverage docs/typedoc docs/assets docs/llms.txt
+CLEAN_BUILD_PATHS := dist public node_modules resources
 JS_BUILD_DIR := assets/js
 
 help:
@@ -119,21 +119,38 @@ help:
 	@echo "  - Hugo Site:    public/ directory"
 	@echo ""
 
+
+
+.PHONY: env-init dot-env-dev
+
+dot-env-dev:
+	@./scripts/setup-env.sh dev
+
+dot-env-stage:
+	@./scripts/setup-env.sh stage
+
+dot-env-prod:
+	@./scripts/setup-env.sh prod
+
+dot-env-all:
+	@./scripts/setup-env.sh all
+
 install:
 	@echo "📦 Installing dependencies with Bun..."
-	bun install
+	@bun install
 
 install-dev:
 	@echo "📦 Installing development dependencies with Bun..."
-	bun install --dev
+	@bun install --dev
 
 dev:
 	@echo "🚀 Starting TypeScript watch mode..."
-	bun run dev
+	@bun run dev
 
 dev-all:
 	@echo "🚀 Starting development environment (TypeScript watch + Hugo server)..."
 	@./scripts/dev.sh $(ENV)
+
 
 
 # ============================================================================
@@ -142,7 +159,7 @@ dev-all:
 
 build-ts:
 	@echo "🔨 Building TypeScript..."
-	bun run build:ts
+	@bun run build:ts
 
 build-all:
 	@echo "🔨 Building CSS, TypeScript, and Hugo site..."
@@ -172,6 +189,8 @@ server:
 	@echo "🚀 Starting Hugo development server..."
 	bun run server
 
+
+
 # ============================================================================
 # Docker Commands
 # ============================================================================
@@ -187,6 +206,8 @@ server-docker-stage:
 build-docker-prod:
 	@echo "🐳 Running Hugo Docker production build (hugo-prod)..."
 	docker compose --profile production run --rm hugo-prod
+
+
 
 # ============================================================================
 # Code Quality Commands
@@ -240,6 +261,8 @@ format-check-md:
 	@echo "🔍 Checking if Markdown files are properly formatted with Prettier..."
 	bun run format:check:md
 
+
+
 # ============================================================================
 # Testing Commands
 # ============================================================================
@@ -260,17 +283,24 @@ test-coverage:
 	@echo "📊 Running tests with coverage report..."
 	bun run test:coverage
 
+
+
 # ============================================================================
 # Documentation Commands
 # ============================================================================
 
 docs:
 	@echo "📚 Generating TypeDoc documentation..."
+	# These
+	@mkdir -p docs/typedoc/badges
+	# Run the TypeDoc generation script
 	bun run docs
 
 docs-watch:
 	@echo "👀 Watching TypeScript files and regenerating documentation on changes..."
 	bun run docs:watch
+
+
 
 # ============================================================================
 # Cleanup Commands
@@ -302,6 +332,8 @@ clean-vendor:
 	@echo "🧹 Cleaning vendored Hugo modules..."
 	rm -rf _vendor/
 	@echo "🧹 Vendored modules cleaned"
+
+
 
 # ============================================================================
 # Hugo Module Management Commands
@@ -341,5 +373,19 @@ hugo-mod-clean:
 	@echo "🧹 Cleaning Hugo module cache..."
 	hugo mod clean
 	@echo "✅ Cache cleaned"
+
+
+
+
+# --- INITIALIZERS ----------------------------------------------------------------------------
+dev-init:
+	@echo "🛠️ Initializing development environment..."
+	@$(MAKE) dot-env-dev
+	@$(MAKE) install-dev
+	@$(MAKE) build-ts
+	@$(MAKE) build-hugo-dev
+	@echo "✅ Dev environment initialized."
+	@echo "👉 Next step: make dev-all"
+
 
 .DEFAULT_GOAL := help

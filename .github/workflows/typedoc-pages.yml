@@ -3,7 +3,7 @@ name: Publish TypeDoc to GitHub Pages
 on:
   push:
     branches:
-      - main
+      - dev
   workflow_dispatch:
 
 permissions:
@@ -17,6 +17,8 @@ concurrency:
 
 jobs:
   build:
+    env:
+      FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: "true"
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
@@ -25,16 +27,29 @@ jobs:
       - name: Setup Bun
         uses: oven-sh/setup-bun@v2
 
-      - name: Install dependencies
-        run: bun install --frozen-lockfile
+      - name: Install dependencies using Bun
+        run: bun install --dev --frozen-lockfile
 
-      - name: Build TypeDoc site
+      - name: Create required directory for coverage badge output
+        run: |
+          mkdir -p ./docs/typedoc/badges
+          touch ./docs/typedoc/badges/typedoc-coverage.json
+
+      - name: Build TypeDoc html site
         run: bun run docs
+
+      - name: Verify TypeDoc html output exists
+        run: |
+          if [ ! -d "docs/typedoc/html" ]; then
+            echo "Expected docs/typedoc/html to exist, but it was not generated."
+            echo "Check typedoc outputs in typedoc.config.mjs and previous build logs."
+            exit 1
+          fi
 
       - name: Upload TypeDoc artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: docs/typedoc
+          path: docs/typedoc/html
 
   deploy:
     needs: build
@@ -46,4 +61,3 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
-
