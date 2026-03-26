@@ -42,11 +42,9 @@ tmp/
 # Environment files (excluded from Docker for security)
 .env
 .env.*
-
 # Keep example env files for developer guidance
 !.env.example
 !.env.sample
 
 # Generated documentation
-docs/typedoc/
-docs/coverage/
+docs/

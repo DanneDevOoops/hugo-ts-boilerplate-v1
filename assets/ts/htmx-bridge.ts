@@ -21,7 +21,7 @@ export function registerComponentInitializer(initializer: () => void): void {
  * @param container - DOM element to scan for components (defaults to document)
  */
 export function initializeComponents(container: Document | Element = document): void {
-  componentInitializers.forEach(init => init());
+  componentInitializers.forEach((init) => init());
 
   // Dispatch custom event for component hydration
   const event = new CustomEvent('components:initialized', {
@@ -65,4 +65,3 @@ export function setupHTMXBridge(): void {
 
   console.info('[htmx-bridge] Initialized');
 }
-

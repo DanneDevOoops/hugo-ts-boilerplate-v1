@@ -20,17 +20,17 @@ help:
 	@echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
 	@echo ""
 	@echo "  make dev                  - Watch TypeScript and rebuild on changes"
-	@echo "  make dev-all              - ⭐ RECOMMENDED: Run TypeScript watch + Hugo dev server"
-	@echo "                            (Both run in one terminal, auto-reload on code changes)"
+	@echo "  make dev-all              - ⭐ RECOMMENDED: Run CSS watch + TypeScript watch + Hugo dev server"
+	@echo "                            (All run in one terminal, auto-reload on code changes)"
 	@echo "  make server               - Start Hugo dev server only (http://localhost:1313)"
 	@echo ""
 	@echo "🔨 BUILD COMMANDS"
 	@echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
 	@echo ""
 	@echo "  make build-ts             - Build TypeScript once"
-	@echo "  make build-all            - Build TypeScript and generate Hugo site"
+	@echo "  make build-all            - Build CSS, TypeScript, and generate Hugo site"
 	@echo "  make build-fast           - 🚀 RECOMMENDED: Fast production build with minification"
-	@echo "                            (TypeScript minified + Hugo minified)"
+	@echo "                            (CSS built + TypeScript minified + Hugo minified)"
 	@echo "  make build-hugo           - Full production build via scripts/build.sh"
 	@echo ""
 	@echo "🐳 DOCKER COMMANDS"
@@ -55,14 +55,14 @@ help:
 	@echo "  Format (Prettier):"
 	@echo "  make format               - Format all files (TS, CSS, HTML, MD) with Prettier"
 	@echo "  make format-ts            - Format TypeScript files with Prettier"
-	@echo "  make format-css           - Format CSS files with Prettier"
+	@echo "  make format-css           - Format SCSS source files with Prettier"
 	@echo "  make format-html          - Format HTML files with Prettier"
 	@echo "  make format-md            - Format Markdown files with Prettier"
 	@echo ""
 	@echo "  Format Check (Prettier):"
 	@echo "  make format-check         - Check if all files are properly formatted"
 	@echo "  make format-check-ts      - Check if TypeScript files are properly formatted"
-	@echo "  make format-check-css     - Check if CSS files are properly formatted"
+	@echo "  make format-check-css     - Check if SCSS source files are properly formatted"
 	@echo "  make format-check-html    - Check if HTML files are properly formatted"
 	@echo "  make format-check-md      - Check if Markdown files are properly formatted"
 	@echo ""
@@ -145,11 +145,12 @@ build-ts:
 	bun run build:ts
 
 build-all:
-	@echo "🔨 Building TypeScript and Hugo site..."
+	@echo "🔨 Building CSS, TypeScript, and Hugo site..."
 	bun run build:all
 
 build-fast:
 	@echo "⚡ Fast build starting..."
+	@bun run build:css
 	@bun build ./assets/ts/main.ts --outdir ./assets/js --target browser --minify --sourcemap=external
 	@hugo --minify
 	@echo "✅ Build complete! Output: public/"
