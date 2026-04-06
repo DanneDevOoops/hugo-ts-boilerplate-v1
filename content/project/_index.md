@@ -7,7 +7,7 @@ draft: false
 description: 'Index of setup guides, architecture references, quick references, and implementation notes for this project.'
 
 tags:
-  - 'guidelines'
+  - 'project'
   - 'documentation'
   - 'index'
   - 'state-management'

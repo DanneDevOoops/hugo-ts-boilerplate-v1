@@ -8,7 +8,7 @@ description: 'Step-by-step implementation guide for integrating state management
 slug: 'stage-management-implementation'
 
 tags:
-  - 'guidelines'
+  - 'project'
   - 'state-management'
   - 'implementation'
   - 'typescript'

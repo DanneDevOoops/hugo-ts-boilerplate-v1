@@ -13,6 +13,9 @@
 // 6. Utilities (single-purpose classes)
 // ============================================================================
 
+// 1. Import Tailwind CSS (optional, if using Tailwind for utility classes)
+@import 'tailwind';
+
 // 1. Settings: Variables, colors, spacing, typography
 @import 'variables';
 
@@ -30,7 +33,7 @@
 
 // 6. Utilities: Single-purpose utility classes
 // Note: Commented out due to file creation timeout
-// @import 'utilities';
+@import 'utilities';
 
 // ============================================================================
 // Project-Specific Styles

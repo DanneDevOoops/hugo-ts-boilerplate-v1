@@ -8,7 +8,7 @@ description: 'Guide to organizing SCSS files, naming conventions, and maintainab
 slug: 'scss-best-practices'
 
 tags:
-  - 'guidelines'
+  - 'project'
   - 'scss'
   - 'css'
   - 'frontend'

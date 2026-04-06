@@ -8,7 +8,7 @@ description: 'Comparison guide for using HTMX as a bundled dependency versus loa
 slug: 'htmx-bundled-vs-cdn'
 
 tags:
-  - 'guidelines'
+  - 'project'
   - 'htmx'
   - 'bundling'
   - 'cdn'

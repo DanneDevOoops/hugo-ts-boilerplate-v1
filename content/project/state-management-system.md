@@ -8,7 +8,7 @@ description: 'Production-ready state management architecture, patterns, and inte
 slug: 'state-management-system'
 
 tags:
-  - 'guidelines'
+  - 'project'
   - 'state-management'
   - 'architecture'
   - 'typescript'

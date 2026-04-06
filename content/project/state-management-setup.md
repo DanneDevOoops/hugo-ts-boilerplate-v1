@@ -8,7 +8,7 @@ description: 'Setup completion guide for the project state management system, in
 slug: 'state-management-setup'
 
 tags:
-  - 'guidelines'
+  - 'project'
   - 'state-management'
   - 'setup'
   - 'typescript'

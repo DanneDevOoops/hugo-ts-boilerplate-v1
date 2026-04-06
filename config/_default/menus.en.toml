@@ -1,160 +1,156 @@
-# --- POST MENU ITEMS ---
-
-[[main]]
-name = "Posts"
-pageRef = "posts"
-weight = 100
-
-# --- END POST MENU ---
-
-
-
-# --- GUIDELINES MENU ---
-
-[[main]]
-name = "Template Guidelines"
-pageRef = "guidelines"
-weight = 200
-
-[[main]]
-name = "Architecture overview"
-parent = "Guidelines"
-pageRef = "guidelines/architecture-overview"
-weight = 201
-
-[[main]]
-name = "Backend API setup"
-parent = "Guidelines"
-pageRef = "guidelines/backend-api-setup"
-weight = 202
-
-[[main]]
-name = "Blowfish Theme Guide"
-parent = "Guidelines"
-pageRef = "guidelines/blowfish-theme-guide"
-weight = 203
-
-[[main]]
-name = "Environment Configuration"
-parent = "Guidelines"
-pageRef = "guidelines/environment-configuration"
-weight = 204
-
-[[main]]
-name = "Environment Quick Reference"
-parent = "Guidelines"
-pageRef = "guidelines/environment-quick-reference"
-weight = 205
-
-[[main]]
-name = "Environment Variables"
-parent = "Guidelines"
-pageRef = "guidelines/environment-varaibles"
-weight = 206
-
-[[main]]
-name = "ESLint & Prettier Guide"
-parent = "Guidelines"
-pageRef = "guidelines/eslint-prettier-guide"
-weight = 207
-
-[[main]]
-name = "Fast Build Guide"
-parent = "Guidelines"
-pageRef = "guidelines/fast-build-guide"
-weight = 208
-
-[[main]]
-name = "HTMX Bundled vs CDN"
-parent = "Guidelines"
-pageRef = "guidelines/htmx-bundled-vs-cdn"
-weight = 209
-
-[[main]]
-name = "HTMX Quick Reference"
-parent = "Guidelines"
-pageRef = "guidelines/htmx-quick-reference"
-weight = 210
-
-[[main]]
-name = "HTMX Web Components Architecture"
-parent = "Guidelines"
-pageRef = "guidelines/htmx-web-components-architecture"
-weight = 211
-
-[[main]]
-name = "Quick Start New Tools"
-parent = "Guidelines"
-pageRef = "guidelines/quick-start-new-tools"
-weight = 212
-
-[[main]]
-name = "Recommended Tools"
-parent = "Guidelines"
-pageRef = "guidelines/recommended-tools"
-weight = 213
-
-[[main]]
-name = "SCSS Best Practices"
-parent = "Guidelines"
-pageRef = "guidelines/scss-best-practices"
-weight = 214
-
-[[main]]
-name = "State Management Implementation"
-parent = "Guidelines"
-pageRef = "guidelines/state-management-implementation"
-weight = 215
-
-[[main]]
-name = "State Management Guide"
-parent = "Guidelines"
-pageRef = "guidelines/state-management-guide"
-weight = 216
-
-# --- END GUIDELINES MENU ---
-
-
-
-# --- PROJECTS MENU ITEMS ---
-
-[[main]]
-name = "Projects"
-pageRef = "projects"
-weight = 20
-
-[[main]]
-name = "An interesting topic"
-parent = "Posts"
-pageRef = "posts/interesting-topic"
-weight = 21
-
-[[main]]
-name = "An interesting topic 2"
-parent = "Posts"
-pageRef = "posts/interesting-topic"
-weight = 22
-
-# --- END PROJECTS MENU ---
-
-
-
-# --- ABOUT MENU ITEMS ---
+# --- 1. ABOUT MENU ITEMS -----------------------
 
 [[main]]
 name = "About"
 pageRef = "about"
-weight = 30
+weight = 100
+
+[[main]]
+name = "Architecture overview"
+parent = "About"
+pageRef = "about/architecture-overview"
+weight = 101
+
+[[main]]
+name = "Blowfish Theme Guide"
+parent = "About"
+pageRef = "about/blowfish-theme-guide"
+weight = 102
+
+[[main]]
+name = "Content Organization Guide"
+parent = "About"
+pageRef = "about/content-organization-guide"
+weight = 103
+
+[[main]]
+name = "Web Components"
+parent = "About"
+pageRef = "about/web-components-guide"
+weight = 104
+
+[[main]]
+name = "Worrkflow diagram"
+parent = "About"
+pageRef = "about/workflow-diagrams"
+weight = 105
 
 # --- END ABOUT MENU ---
 
 
 
-# --- END OTHER MENU ITEMS ---
+# --- 2. TOOLS MENU ITEMS -----------------------
+
+[[main]]
+name = "Tools"
+pageRef = "tools"
+weight = 200
+
+[[main]]
+name = "Tools"
+pageRef = "tools/bun"
+weight = 201
+
+# --- END TOOLS MENU ---
 
 
 
-# --- SUBNAVIGATION EXAMPLE ---
+# --- 3. PROJECT MENU ---------------------------
+
+[[main]]
+name = "Project"
+pageRef = "project"
+weight = 300
+
+[[main]]
+name = "Backend API setup"
+parent = "Project"
+pageRef = "project/backend-api-setup"
+weight = 301
+
+[[main]]
+name = "Environment Configuration"
+parent = "Project"
+pageRef = "project/environment-configuration"
+weight = 303
+
+[[main]]
+name = "Environment Quick Reference"
+parent = "Project"
+pageRef = "project/environment-quick-reference"
+weight = 304
+
+[[main]]
+name = "Environment Variables"
+parent = "Project"
+pageRef = "project/environment-varaibles"
+weight = 305
+
+[[main]]
+name = "ESLint & Prettier Guide"
+parent = "Project"
+pageRef = "project/eslint-prettier-guide"
+weight = 306
+
+[[main]]
+name = "Fast Build Guide"
+parent = "Project"
+pageRef = "project/fast-build-guide"
+weight = 307
+
+[[main]]
+name = "HTMX Bundled vs CDN"
+parent = "Project"
+pageRef = "project/htmx-bundled-vs-cdn"
+weight = 308
+
+[[main]]
+name = "HTMX Quick Reference"
+parent = "Project"
+pageRef = "project/htmx-quick-reference"
+weight = 309
+
+[[main]]
+name = "HTMX Web Components Architecture"
+parent = "Project"
+pageRef = "project/htmx-web-components-architecture"
+weight = 310
+
+[[main]]
+name = "Quick Start New Tools"
+parent = "Project"
+pageRef = "project/quick-start-new-tools"
+weight = 311
+
+[[main]]
+name = "Recommended Tools"
+parent = "Project"
+pageRef = "project/recommended-tools"
+weight = 312
+
+[[main]]
+name = "SCSS Best Practices"
+parent = "Project"
+pageRef = "project/scss-best-practices"
+weight = 313
+
+[[main]]
+name = "State Management Implementation"
+parent = "Project"
+pageRef = "project/state-management-implementation"
+weight = 314
+
+[[main]]
+name = "State Management Guide"
+parent = "Project"
+pageRef = "project/state-management-guide"
+weight = 315
+
+# --- END GUIDELINES MENU -----------------------
+
+
+
+# --- SUBNAVIGATION EXAMPLE ---------------------
 
 [[subnavigation]]
 name = "Sub ordrered menu item"

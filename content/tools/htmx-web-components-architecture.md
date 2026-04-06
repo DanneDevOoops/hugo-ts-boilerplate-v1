@@ -8,7 +8,7 @@ description: 'Architecture guide for combining HTMX server-driven interactions w
 slug: 'htmx-web-components-architecture'
 
 tags:
-  - 'guidelines'
+  - 'project'
   - 'architecture'
   - 'htmx'
   - 'web-components'
@@ -224,7 +224,7 @@ this.addEventListener('htmx:afterSwap', (e) => {
 
 ```html
 <div id="post-list">
-  <!-- Server renders posts -->
+  <!-- Server renders tools -->
   <button hx-get="/posts?page=2" hx-target="#post-list" hx-swap="outerHTML">Load More</button>
 </div>
 ```
@@ -302,7 +302,7 @@ For HTMX fragments, you need endpoints that return HTML:
 
 ```go
 // Serve HTML fragments
-http.HandleFunc("/fragments/posts", func(w http.ResponseWriter, r *http.Request) {
+http.HandleFunc("/fragments/tools", func(w http.ResponseWriter, r *http.Request) {
     // Render partial HTML
     w.Header().Set("Content-Type", "text/html")
     fmt.Fprint(w, "<div>...</div>")

@@ -1,8 +1,14 @@
 // Example: Theme switcher with TypeScript
 // File: assets/ts/features/theme-switcher.ts
 
+/** Available theme modes for the site UI. */
 export type Theme = 'light' | 'dark' | 'auto';
 
+/**
+ * Persists and applies the current color theme for the document.
+ *
+ * The `'auto'` mode follows the user's operating system preference.
+ */
 export class ThemeSwitcher {
   private theme: Theme = 'auto';
   private htmlElement: HTMLElement;
@@ -38,16 +44,25 @@ export class ThemeSwitcher {
     });
   }
 
+  /**
+   * Sets the active theme and stores the preference in local storage.
+   */
   public setTheme(theme: Theme): void {
     this.theme = theme;
     localStorage.setItem(this.storageKey, theme);
     this.applyTheme();
   }
 
+  /**
+   * Returns the currently selected theme preference.
+   */
   public getTheme(): Theme {
     return this.theme;
   }
 
+  /**
+   * Cycles through `light`, `dark`, and `auto` theme modes.
+   */
   public toggle(): void {
     if (this.theme === 'light') {
       this.setTheme('dark');

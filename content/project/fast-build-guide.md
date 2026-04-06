@@ -8,7 +8,7 @@ description: 'Guide to building a fast Hugo + TypeScript pipeline with Bun, Hugo
 slug: 'fast-build-guide'
 
 tags:
-  - 'guidelines'
+  - 'project'
   - 'hugo'
   - 'bun'
   - 'typescript'

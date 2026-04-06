@@ -8,7 +8,7 @@ description: 'Guide to linting and formatting with ESLint, Prettier, and typescr
 slug: 'eslint-prettier-guide'
 
 tags:
-  - 'guidelines'
+  - 'project'
   - 'eslint'
   - 'prettier'
   - 'typescript'
