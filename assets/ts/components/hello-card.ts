@@ -1,20 +1,55 @@
 import { LitElement, css, html, CSSResult } from 'lit';
+import { applyTailwindToShadowRoot } from '../utils/tailwind-mixin';
 
+/**
+ * Interactive greeting card web component built with Lit.
+ *
+ * Renders a greeting, tracks click count, and emits `count-changed`
+ * whenever the button is pressed.
+ *
+ * @module
+ * @importTarget ./hello-card.ts
+ * 
+ * {@link LitElement}
+ *
+ *
+ * @example
+ * ```html
+ * <hello-card name="Daniel"></hello-card>
+ * ```
+ *
+ * ```mermaid
+ * stateDiagram-v2
+ *   [*] --> Initialized: constructor()
+ *   Initialized --> Connected: connectedCallback()
+ *   Connected --> Ready: first render
+ *   Ready --> Ready: button click / count += 1
+ *   Ready --> EventDispatched: dispatchEvent("count-changed")
+ *   EventDispatched --> Ready
+ * ```
+ */
 export class HelloCard extends LitElement {
+  /** @internal */
   static properties = {
     name: { type: String },
     count: { type: Number },
   };
 
   // Keep Shadow DOM, but let host focus move to inner controls.
+  /** @internal */
   static shadowRootOptions = {
     ...LitElement.shadowRootOptions,
     delegatesFocus: true,
   };
 
+  /** Name displayed in the greeting. @defaultValue `'friend'` */
   declare name: string;
+
+  /** Number of button clicks. @defaultValue `0` */
   declare count: number;
 
+  /** Component-scoped CSS styles. */
+  /** @internal */
   static styles: CSSResult = css`
     :host {
       display: block;
@@ -54,8 +89,10 @@ export class HelloCard extends LitElement {
     this.count = 0;
   }
 
+  /** @internal */
   connectedCallback(): void {
     super.connectedCallback();
+    void applyTailwindToShadowRoot(this);
 
     console.info('[hello-card] initialized', { name: this.name });
 
@@ -78,6 +115,7 @@ export class HelloCard extends LitElement {
     );
   };
 
+  /** @internal */
   render() {
     return html`
       <div class="card">

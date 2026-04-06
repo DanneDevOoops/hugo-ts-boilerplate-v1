@@ -8,7 +8,7 @@ description: 'Guide to integrating and using Lit-based Web Components inside Hug
 slug: 'web-components-guide'
 
 tags:
-  - 'guidelines'
+  - 'project'
   - 'web-components'
   - 'lit'
   - 'hugo'

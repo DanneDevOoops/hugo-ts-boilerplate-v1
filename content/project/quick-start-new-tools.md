@@ -8,7 +8,7 @@ description: 'Quick-start guide for using newly added tools: Vitest, @11ty/is-la
 slug: 'quick-start-new-tools'
 
 tags:
-  - 'guidelines'
+  - 'project'
   - 'vitest'
   - 'is-land'
   - 'zod'

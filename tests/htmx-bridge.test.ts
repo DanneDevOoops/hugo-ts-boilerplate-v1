@@ -93,6 +93,20 @@ describe('HTMX Bridge', () => {
 
       expect(consoleSpy).toHaveBeenCalledWith('[htmx-bridge] Before swap', mockElement);
     });
+
+    it('should handle htmx:responseError event', () => {
+      const consoleSpy = vi.spyOn(console, 'error').mockImplementation(() => {});
+      setupHTMXBridge();
+
+      const detail = { status: 500, path: '/api/demo' };
+      const event = new CustomEvent('htmx:responseError', {
+        detail,
+      });
+
+      document.body.dispatchEvent(event);
+
+      expect(consoleSpy).toHaveBeenCalledWith('[htmx-bridge] Response error', detail);
+    });
   });
 });
 

@@ -25,7 +25,7 @@ This is my first blog post created with Hugo! Hugo is an amazing static site gen
 Creating content is as simple as:
 
 ```bash
-hugo new posts/my-post.md
+hugo new tools/my-post.md
 ```
 
 Then just write your content in markdown!

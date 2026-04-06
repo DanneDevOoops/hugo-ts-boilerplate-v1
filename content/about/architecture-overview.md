@@ -1,5 +1,5 @@
 ---
-title: 'State Management Architecture Overview'
+title: 'Architecture Overview'
 date: 2026-03-10
 lastmod: 2026-03-25
 draft: false
@@ -7,10 +7,10 @@ draft: false
 description: 'Architecture and data-flow overview for a lightweight state management system in Hugo + HTMX + TypeScript, including cache strategy, service boundaries, and performance patterns.'
 slug: 'architecture-overview'
 aliases:
-  - '/guidelines/arcitechture-overview/'
+  - '/project/arcitechture-overview/'
 
 tags:
-  - 'guidelines'
+  - 'project'
   - 'state management'
   - 'architecture'
   - 'typescript'
@@ -388,7 +388,7 @@ initializeComponents(swappedElement);
 
 // Cache Stats
 cacheManager.getStats();
-// { size: 15, entries: ['user:1', 'posts:1', ...] }
+// { size: 15, entries: ['user:1', 'tools:1', ...] }
 
 // Store State
 appStore.getState();

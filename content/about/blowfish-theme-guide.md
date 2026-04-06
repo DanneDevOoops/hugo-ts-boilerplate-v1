@@ -10,7 +10,7 @@ tags:
   - 'blowfish'
   - 'theme'
   - 'configuration'
-  - 'guidelines'
+  - 'project'
   - 'customization'
 categories:
   - 'Guidelines'

@@ -28,13 +28,14 @@ enableEmoji = true
   tag = "tags"
   author = "authors"
   series = "series"
+  linktype = "linktypes"
 
 [sitemap]
   changefreq = 'daily'
   filename = 'sitemap.xml'
   priority = 0.5
 
-[outputs]
+[outputs]´
   home = ["HTML", "RSS", "JSON"]
 
 [related]
