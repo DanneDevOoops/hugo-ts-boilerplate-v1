@@ -156,5 +156,13 @@ weight = 315
 name = "Sub ordrered menu item"
 pageRef = "posts/welcome"
 
+
+
+# --- FOOTER MENU ITEMS -------------------------
+
 [[footer]]
 none = "none"
+
+#[[footer]]
+#name = "Privacy"
+#url = "https://external-link"
