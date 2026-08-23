@@ -48,3 +48,6 @@ tmp/
 
 # Generated documentation
 docs/
+
+# Infisical - Private secrets management tool
+.infisical.json
